@@ -1,0 +1,42 @@
+{
+	"name": "InvoiceModelDataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Landing_InvoiceModelDataset",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				},
+				{
+					"dataset": {
+						"referenceName": "InvoiceModelODS",
+						"type": "DatasetReference"
+					},
+					"name": "source2"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "InvoiceModelODS",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Join1"
+				},
+				{
+					"name": "AlterRow1"
+				}
+			],
+			"script": "source(output(\n\t\tID as integer,\n\t\tTakenStatus as string,\n\t\tTakenDate as date,\n\t\tAverageCost as decimal(15,4),\n\t\tStandardCost as decimal(15,4),\n\t\tLastCost as decimal(15,4),\n\t\tColor as string,\n\t\tPOCode as string,\n\t\tReference as string,\n\t\tPODateStamp as date,\n\t\tPOLineTimeStamp as string,\n\t\tSpecialOrderDate as date,\n\t\tTripNo as integer,\n\t\tLandedCost as decimal(15,4),\n\t\tAutoBackorder as boolean,\n\t\tManufacturersWarranty as integer,\n\t\tReplacementCost as decimal(15,4),\n\t\tUserVerified as string,\n\t\tDateVerified as date,\n\t\tTimeVerified as string,\n\t\tOriginalCost as decimal(15,4),\n\t\tReserveExclusive as boolean,\n\t\tCommissionCode as string,\n\t\tEDIFormat as string,\n\t\tBranchCode as string,\n\t\tsysCreated as timestamp,\n\t\tsysModified as timestamp,\n\t\tDateCreated as date,\n\t\tDateModified as date,\n\t\tDateStamp as date,\n\t\tInPackage as boolean,\n\t\tInvoiceCode as string,\n\t\tLineTimeStamp as string,\n\t\tLocationCode as string,\n\t\tModelCode as string,\n\t\tModelDesc as string,\n\t\tNewUsed as string,\n\t\tQtyOrdered as integer,\n\t\tQtyReserved as integer,\n\t\tQtyShipped as integer,\n\t\tSellingPrice as decimal(15,4),\n\t\tSpiff as decimal(15,4),\n\t\tStatus as string,\n\t\tTax1 as boolean,\n\t\tTax1CostList as string,\n\t\tTax1Included as boolean,\n\t\tTax1Percentage as decimal(15,4),\n\t\tTax2 as boolean,\n\t\tTax3 as boolean,\n\t\tTotal as decimal(15,4),\n\t\tUserCreated as string,\n\t\tUserModified as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> source1\nsource(output(\n\t\tID as integer,\n\t\tTakenStatus as string,\n\t\tTakenDate as date,\n\t\tAverageCost as decimal(15,4),\n\t\tStandardCost as decimal(15,4),\n\t\tLastCost as decimal(15,4),\n\t\tColor as string,\n\t\tPOCode as string,\n\t\tReference as string,\n\t\tPODateStamp as date,\n\t\tPOLineTimeStamp as string,\n\t\tSpecialOrderDate as date,\n\t\tTripNo as integer,\n\t\tLandedCost as decimal(15,4),\n\t\tAutoBackorder as boolean,\n\t\tManufacturersWarranty as integer,\n\t\tReplacementCost as decimal(15,4),\n\t\tUserVerified as string,\n\t\tDateVerified as date,\n\t\tTimeVerified as string,\n\t\tOriginalCost as decimal(15,4),\n\t\tReserveExclusive as boolean,\n\t\tCommissionCode as string,\n\t\tEDIFormat as string,\n\t\tBranchCode as string,\n\t\tsysCreated as timestamp,\n\t\tsysModified as timestamp,\n\t\tDateCreated as date,\n\t\tDateModified as date,\n\t\tDateStamp as date,\n\t\tInPackage as boolean,\n\t\tInvoiceCode as string,\n\t\tLineTimeStamp as string,\n\t\tLocationCode as string,\n\t\tModelCode as string,\n\t\tModelDesc as string,\n\t\tNewUsed as string,\n\t\tQtyOrdered as integer,\n\t\tQtyReserved as integer,\n\t\tQtyShipped as integer,\n\t\tSellingPrice as decimal(15,4),\n\t\tSpiff as decimal(15,4),\n\t\tStatus as string,\n\t\tTax1 as boolean,\n\t\tTax1CostList as string,\n\t\tTax1Included as boolean,\n\t\tTax1Percentage as decimal(15,4),\n\t\tTax2 as boolean,\n\t\tTax3 as boolean,\n\t\tTotal as decimal(15,4),\n\t\tUserCreated as string,\n\t\tUserModified as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> source2\nsource1, source2 join(source1@ID == source2@ID,\n\tjoinType:'left',\n\tbroadcast: 'auto')~> Join1\nJoin1 alterRow(updateIf(equals(source1@ID,source2@ID))) ~> AlterRow1\nAlterRow1 sink(allowSchemaDrift: false,\n\tvalidateSchema: false,\n\tinput(\n\t\tID as integer,\n\t\tTakenStatus as string,\n\t\tTakenDate as date,\n\t\tAverageCost as decimal(15,4),\n\t\tStandardCost as decimal(15,4),\n\t\tLastCost as decimal(15,4),\n\t\tColor as string,\n\t\tPOCode as string,\n\t\tReference as string,\n\t\tPODateStamp as date,\n\t\tPOLineTimeStamp as string,\n\t\tSpecialOrderDate as date,\n\t\tTripNo as integer,\n\t\tLandedCost as decimal(15,4),\n\t\tAutoBackorder as boolean,\n\t\tManufacturersWarranty as integer,\n\t\tReplacementCost as decimal(15,4),\n\t\tUserVerified as string,\n\t\tDateVerified as date,\n\t\tTimeVerified as string,\n\t\tOriginalCost as decimal(15,4),\n\t\tReserveExclusive as boolean,\n\t\tCommissionCode as string,\n\t\tEDIFormat as string,\n\t\tBranchCode as string,\n\t\tsysCreated as timestamp,\n\t\tsysModified as timestamp,\n\t\tDateCreated as date,\n\t\tDateModified as date,\n\t\tDateStamp as date,\n\t\tInPackage as boolean,\n\t\tInvoiceCode as string,\n\t\tLineTimeStamp as string,\n\t\tLocationCode as string,\n\t\tModelCode as string,\n\t\tModelDesc as string,\n\t\tNewUsed as string,\n\t\tQtyOrdered as integer,\n\t\tQtyReserved as integer,\n\t\tQtyShipped as integer,\n\t\tSellingPrice as decimal(15,4),\n\t\tSpiff as decimal(15,4),\n\t\tStatus as string,\n\t\tTax1 as boolean,\n\t\tTax1CostList as string,\n\t\tTax1Included as boolean,\n\t\tTax1Percentage as decimal(15,4),\n\t\tTax2 as boolean,\n\t\tTax3 as boolean,\n\t\tTotal as decimal(15,4),\n\t\tUserCreated as string,\n\t\tUserModified as string\n\t),\n\tdeletable:false,\n\tinsertable:false,\n\tupdateable:true,\n\tupsertable:false,\n\tkeys:['ID'],\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError') ~> sink1"
+		}
+	}
+}

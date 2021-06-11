@@ -1,0 +1,24 @@
+{
+	"name": "Landing_InvoiceModelwatermarktable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Secondary1_Landing Linked Service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "InvoiceModelwatermark_value",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "InvoiceModelwatermark_table"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

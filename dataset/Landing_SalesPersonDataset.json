@@ -1,0 +1,256 @@
+{
+	"name": "Landing_SalesPersonDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Secondary1_Landing Linked Service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TakenStatus",
+				"type": "varchar"
+			},
+			{
+				"name": "TakenDate",
+				"type": "date"
+			},
+			{
+				"name": "AverageCost",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "StandardCost",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "LastCost",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "Color",
+				"type": "varchar"
+			},
+			{
+				"name": "POCode",
+				"type": "varchar"
+			},
+			{
+				"name": "Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "PODateStamp",
+				"type": "date"
+			},
+			{
+				"name": "POLineTimeStamp",
+				"type": "varchar"
+			},
+			{
+				"name": "SpecialOrderDate",
+				"type": "date"
+			},
+			{
+				"name": "TripNo",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LandedCost",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "AutoBackorder",
+				"type": "bit"
+			},
+			{
+				"name": "ManufacturersWarranty",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ReplacementCost",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "UserVerified",
+				"type": "varchar"
+			},
+			{
+				"name": "DateVerified",
+				"type": "date"
+			},
+			{
+				"name": "TimeVerified",
+				"type": "varchar"
+			},
+			{
+				"name": "OriginalCost",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "ReserveExclusive",
+				"type": "bit"
+			},
+			{
+				"name": "CommissionCode",
+				"type": "varchar"
+			},
+			{
+				"name": "EDIFormat",
+				"type": "varchar"
+			},
+			{
+				"name": "BranchCode",
+				"type": "varchar"
+			},
+			{
+				"name": "sysCreated",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "sysModified",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DateCreated",
+				"type": "date"
+			},
+			{
+				"name": "DateModified",
+				"type": "date"
+			},
+			{
+				"name": "DateStamp",
+				"type": "date"
+			},
+			{
+				"name": "InPackage",
+				"type": "bit"
+			},
+			{
+				"name": "InvoiceCode",
+				"type": "varchar"
+			},
+			{
+				"name": "LineTimeStamp",
+				"type": "varchar"
+			},
+			{
+				"name": "LocationCode",
+				"type": "varchar"
+			},
+			{
+				"name": "ModelCode",
+				"type": "varchar"
+			},
+			{
+				"name": "ModelDesc",
+				"type": "varchar"
+			},
+			{
+				"name": "NewUsed",
+				"type": "varchar"
+			},
+			{
+				"name": "QtyOrdered",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "QtyReserved",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "QtyShipped",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SellingPrice",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "Spiff",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "Status",
+				"type": "varchar"
+			},
+			{
+				"name": "Tax1",
+				"type": "bit"
+			},
+			{
+				"name": "Tax1CostList",
+				"type": "varchar"
+			},
+			{
+				"name": "Tax1Included",
+				"type": "bit"
+			},
+			{
+				"name": "Tax1Percentage",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "Tax2",
+				"type": "bit"
+			},
+			{
+				"name": "Tax3",
+				"type": "bit"
+			},
+			{
+				"name": "Total",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "UserCreated",
+				"type": "varchar"
+			},
+			{
+				"name": "UserModified",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "rd",
+			"table": "Salesperson"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

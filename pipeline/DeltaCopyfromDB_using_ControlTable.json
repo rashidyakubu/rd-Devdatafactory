@@ -1,0 +1,168 @@
+{
+	"name": "DeltaCopyfromDB_using_ControlTable",
+	"properties": {
+		"description": "Copy new or updated rows only from database using external control table",
+		"activities": [
+			{
+				"name": "LookupLastWaterMark",
+				"description": "Retrieve the last high-watermark value stored in external control table",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource",
+						"sqlReaderQuery": {
+							"value": "select @{pipeline().parameters.Control_Table_Column_Name} as WatermarkValue from @{pipeline().parameters.Control_Table_Table_Name}",
+							"type": "Expression"
+						},
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "AzureSqlDatabaseExternal_ControlTable",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "LookupCurrentWaterMark",
+				"description": "Retrieve  the current maximum value in watermark column of source data store",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OdbcSource",
+						"query": {
+							"value": "@concat('select MAX(',pipeline().parameters.Data_Source_WaterMarkColumn, ') as NewWatermarkValue from ',pipeline().parameters.Data_Source_Table_Name)",
+							"type": "Expression"
+						}
+					},
+					"dataset": {
+						"referenceName": "OdbcDataSource",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "DeltaCopyfromDB",
+				"description": "Copy activity to use query to filter the delta data by > last high-watermark and <= current high-watermark from source database, and then only copy the changes to the destination store.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "LookupCurrentWaterMark",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "LookupLastWaterMark",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OdbcSource",
+						"query": {
+							"value": "select  ID , Financed , Void , Qualification , Priority , Tax3Percentage \n      , SvcRepairCode1 , SvcRepairCode2 , SvcRepairCode3 , SvcRepairCode4 , ContractCode , SvcContract \n      , UserFinished , UserPosted , UpdateHistoryWarranty , ShipMethod , TimeCreated , TimeModified , TimeFinished \n      , DispatchUnits , EDIDateStamp , EDITimeStamp , PrintMethod , DispatchStartTime , TripChargeCode \n      , TripChargeAmount \n      , Locked \n      , MobileTechInvoiceCode \n      , ServiceRequestID \n      , CarrierCode \n      , ShipViaCode \n      , JobStatusUpdate \n      , DispatchEmail \n      , LastDateSaved \n      , LastTimeSaved \n      , Terms \n      , SvcEquipmentNumber \n      , WebOrderID \n      , Department \n      , CreditStatusCode \n      , CreditApprovedUserCode \n      , CreditApprovedDateStamp \n      , CreditApprovedTimeStamp \n      , EDIMaroline \n      , RequestedDate \n      , SvcCSRInvoice \n      , SvcSoldList \n      , SvcSoldSTDCost \n      , SvcFollowUpDate \n      , SvcScheduleDate \n      , Tax2MaxAmount \n      , EDIWhirlpool \n      , MinDepositPercent \n      , UnitModifier \n      , DateFinished \n      , DatePosted \n      , TimePosted \n      , TTRTaxCalculated \n      , PickUpBranchCode \n      , PodiumOptOut \n      , SignCustmizedFields \n      , AVBSaleDateSent \n      , AVBSaleTimeSent \n      , sysCreated \n      , sysModified \n      , TTRJurisdictionCode \n      , BranchCode \n      , COGSPosted \n      , CallSequence \n      , Code \n      , CommittedPaymentTotal \n      , DateCreated \n      , DateModified \n      , DispatchPriority \n      , DispatchRequestedRouteCode \n      , DispatchSpecRequest \n      , DispatchTime \n      , DispatchTimeAM \n      , Estimate \n      , Field1 \n      , Field2 \n      , Field3 \n      , Field4 \n      , Field5 \n      , InvFinishDate \n      , InvStartDate \n      , InvTypeCode \n      , ItemListPriceCode \n      , ItemTotal \n      , JobLocation \n      , JobNumber \n      , JobStatusCode \n      , LaborRate \n      , LaborTotal \n      , MapReference \n      , MapZoneCode \n      , MiscTotal \n      , OpenPaymentTotal \n      , OtherListPriceCode \n      , PONumber \n      , PaymentTypeCode \n      , PickUpDate \n      , Reference \n      , SaleReferralCode \n      , Salesperson1Code \n      , Salesperson2Code \n      , Salesperson2Percentage \n      , ScheduleDate \n      , SerialListPriceCode \n      , SerialTotal \n      , Status \n      , SvcAgreementExpDate \n      , SvcAgreementNumber \n      , SvcBrandCode \n      , SvcCenter \n      , SvcCenterNumber \n      , SvcComplaintCode \n      , SvcComplaintDesc \n      , SvcDatePurchased \n      , SvcDealerCode \n      , SvcDealerDesc \n      , SvcDistributorNumber \n      , SvcInWarranty \n      , SvcMfgCodeEiaNumber \n      , SvcMicroLeak \n      , SvcMiles \n      , SvcMilesRate \n      , SvcMilesTotal \n      , SvcModel \n      , SvcMotorNewNumber \n      , SvcMotorOldNumber \n      , SvcPerformedCode \n      , SvcPerformedDesc \n      , SvcProduct \n      , SvcProductCode \n      , SvcRepairCatMinorMajor \n      , SvcRepairCategory \n      , SvcRepairCode \n      , SvcRunNumber \n      , SvcSerial \n      , SvcSpecAuthNumber \n      , SvcStockMerchandise \n      , SvcTimeCompleted1 \n      , SvcTimeCompleted2 \n      , SvcTimeOnJob1 \n      , SvcTimeOnJob2 \n      , SvcTimeStarted1 \n      , SvcTimeStarted2 \n      , Tax1Exempt \n      , Tax1Total \n      , Tax2Code \n      , Tax2Exempt \n      , Tax2Percentage \n      , Tax2Total \n      , Tax3Exempt \n      , Tax3Total \n      , UserCreated \n      , UserModified \n      , Warranty \n      , WarrantyField1 \n      , WarrantyField2 \n      , WarrantyField3 \n      , WarrantyField4 \n      , WarrantyField5 \n      , WtyTotal \n\nfrom \n@{pipeline().parameters.Data_Source_Table_Name} where @{pipeline().parameters.Data_Source_WaterMarkColumn} > '@{activity('LookupLastWaterMark').output.firstRow.WatermarkValue}' and @{pipeline().parameters.Data_Source_WaterMarkColumn} <= '@{activity('LookupCurrentWaterMark').output.firstRow.NewWatermarkValue}'",
+							"type": "Expression"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"dataIntegrationUnits": 0
+				},
+				"inputs": [
+					{
+						"referenceName": "OdbcDataSource",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Secondary1_Sink",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "UpdateWaterMark",
+				"description": "Stored procedure activity to store the new high-watermark value into external control table for delta data loading. ",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "DeltaCopyfromDB",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[update_watermark]",
+					"storedProcedureParameters": {
+						"LastModifiedtime": {
+							"value": {
+								"value": "@{activity('LookupCurrentWaterMark').output.firstRow.NewWatermarkValue}",
+								"type": "Expression"
+							},
+							"type": "DateTime"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "Controltablelinkedservice",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"Data_Source_Table_Name": {
+				"type": "String"
+			},
+			"Data_Source_WaterMarkColumn": {
+				"type": "String"
+			},
+			"Data_Destination_Container": {
+				"type": "String"
+			},
+			"Data_Destination_Directory": {
+				"type": "String"
+			},
+			"Control_Table_Table_Name": {
+				"type": "String"
+			},
+			"Control_Table_Column_Name": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-05-04T22:29:53Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

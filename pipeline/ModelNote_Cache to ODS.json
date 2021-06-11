@@ -1,0 +1,686 @@
+{
+	"name": "ModelNote_Cache to ODS",
+	"properties": {
+		"activities": [
+			{
+				"name": "CopyActivity1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Truncate Branch",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OdbcSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_hdo",
+						"type": "DatasetReference",
+						"parameters": {
+							"TableName": "SQLUser.ModelNote"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Landing_ModelNote",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Truncate Branch",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Set Run Start 1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[LandingTablesTruncate_ModelNote]"
+				},
+				"linkedServiceName": {
+					"referenceName": "Secondary1_Landing Linked Service",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Insert",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Truncate",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[ModelNote_Insert]"
+				},
+				"linkedServiceName": {
+					"referenceName": "Secondary1LinkedService_Test",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Get Run Start 1",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "Load Active Trigger Begin 1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT  DATEADD(hh,-7,current_timestamp) AS [RunStart1]",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ControlTableDataset",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "Set Run Start 1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Get Run Start 1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[Control_ETLTimes]",
+					"storedProcedureParameters": {
+						"Column_Name": {
+							"value": {
+								"value": "@{pipeline().parameters.ETLBeginTimeColumn}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Entity": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Entity}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"GetRunEnd": {
+							"value": {
+								"value": "@{activity('Get Run Start 1').output.firstRow.RunStart1}",
+								"type": "Expression"
+							},
+							"type": "DateTime"
+						},
+						"Group": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Group1}",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "Secondary1LinkedService_Test",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Get Run End 1",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "CopyActivity1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT  DATEADD(hh,-7,current_timestamp) AS [RunEnd1]",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ControlTableDataset",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "Set Run End 1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Get Run End 1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[Control_ETLTimes]",
+					"storedProcedureParameters": {
+						"Column_Name": {
+							"value": {
+								"value": "@{pipeline().parameters.ETLEndTimeColumn}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Entity": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Entity}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"GetRunEnd": {
+							"value": {
+								"value": "@{activity('Get Run End 1').output.firstRow.RunEnd1}",
+								"type": "Expression"
+							},
+							"type": "DateTime"
+						},
+						"Group": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Group1}",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "Secondary1LinkedService_Test",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Load Active Trigger Begin 1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[Control_LoadActive]",
+					"storedProcedureParameters": {
+						"Entity": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Entity}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Group": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Group1}",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "Secondary1LinkedService_Test",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Load Active Trigger End 1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Set Run End 1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[Control_LoadActive]",
+					"storedProcedureParameters": {
+						"Entity": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Entity}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Group": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Group1}",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "Secondary1LinkedService_Test",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Get Run Start 2",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "Load Active Trigger End 1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT  DATEADD(hh,-7,current_timestamp) AS [RunStart2]",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ControlTableDataset",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "Set Run Start 2",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Get Run Start 2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[Control_ETLTimes]",
+					"storedProcedureParameters": {
+						"Column_Name": {
+							"value": {
+								"value": "@{pipeline().parameters.ETLBeginTimeColumn}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Entity": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Entity}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"GetRunEnd": {
+							"value": {
+								"value": "@{activity('Get Run Start 2').output.firstRow.RunStart2}",
+								"type": "Expression"
+							},
+							"type": "DateTime"
+						},
+						"Group": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Group2}",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "Secondary1LinkedService_Test",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Load Active Trigger Begin 2",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Set Run Start 2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[Control_LoadActive]",
+					"storedProcedureParameters": {
+						"Entity": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Entity}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Group": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Group2}",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "Secondary1LinkedService_Test",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Get Run End 2",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "Insert",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT  DATEADD(hh,-7,current_timestamp) AS [RunEnd2]",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ControlTableDataset",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "UpdateControlTable",
+				"description": "Stored procedure activity to store the new high-watermark value into external control table for delta data loading. ",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Get Run End 2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[Control_ETLTimes]",
+					"storedProcedureParameters": {
+						"Column_Name": {
+							"value": {
+								"value": "@{pipeline().parameters.ETLEndTimeColumn}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Entity": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Entity}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"GetRunEnd": {
+							"value": {
+								"value": "@{activity('Get Run End 2').output.firstRow.RunEnd2}",
+								"type": "Expression"
+							},
+							"type": "DateTime"
+						},
+						"Group": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Group2}",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "Secondary1LinkedService_Test",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Load Active Trigger End 2",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "UpdateControlTable",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[Control_LoadActive]",
+					"storedProcedureParameters": {
+						"Entity": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Entity}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Group": {
+							"value": {
+								"value": "@{pipeline().parameters.ControlTable_Group2}",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "Secondary1LinkedService_Test",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Truncate",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Load Active Trigger Begin 2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[ODSModelNote_Truncate]"
+				},
+				"linkedServiceName": {
+					"referenceName": "Secondary1LinkedService_Test",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"ControlTable_Entity": {
+				"type": "string",
+				"defaultValue": "ModelNote"
+			},
+			"ControlTable_Group1": {
+				"type": "string",
+				"defaultValue": "10"
+			},
+			"ETLBeginTimeColumn": {
+				"type": "string",
+				"defaultValue": "ETL Last Run Start"
+			},
+			"ETLEndTimeColumn": {
+				"type": "string",
+				"defaultValue": "ETL Last Run End"
+			},
+			"ControlTable_Group2": {
+				"type": "string",
+				"defaultValue": "20"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-06-11T00:42:31Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

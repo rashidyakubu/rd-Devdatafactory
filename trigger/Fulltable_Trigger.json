@@ -1,0 +1,148 @@
+{
+	"name": "Fulltable_Trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Branch_Cache to ODS",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"ControlTable_Entity": "Branch",
+					"ControlTable_Group1": "10",
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End",
+					"ControlTable_Group2": "20"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Brand_Cache to ODS",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"ControlTable_Entity": "Brand",
+					"ControlTable_Group1": "10",
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End",
+					"ControlTable_Group2": "20"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Misc_Cache to ODS",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"ControlTable_Entity": "Misc",
+					"ControlTable_Group1": "10",
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End",
+					"ControlTable_Group2": "20"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "SalesPerson_Cache to ODS",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"ControlTable_Entity": "SalesPerson",
+					"ControlTable_Group1": "10",
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End",
+					"ControlTable_Group2": "20"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Location_Cache to ODS",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"ControlTable_Entity": "Location",
+					"ControlTable_Group1": "10",
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End",
+					"ControlTable_Group2": "20"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Product_Cache to ODS",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"ControlTable_Entity": "Product",
+					"ControlTable_Group1": "10",
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End",
+					"ControlTable_Group2": "20"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "ProductMinor_Cache to ODS Copy Activity",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"ControlTable_Entity": "ProductMinor",
+					"ControlTable_Group1": "10",
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End",
+					"ControlTable_Group2": "20"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Dim_ProductMajor_Cache to ODS Copy Activity",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"ControlTable_Entity": "Dim_ProductMajor",
+					"ControlTable_Group1": "10",
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End",
+					"ControlTable_Group2": "20"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Dim_ProductSuper_Cache to ODS Copy Activity",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"ControlTable_Entity": "Dim_ProductSuper",
+					"ControlTable_Group1": "10",
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End",
+					"ControlTable_Group2": "20"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "ModelNote_Cache to ODS",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"ControlTable_Entity": "ModelNote",
+					"ControlTable_Group1": "10",
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End",
+					"ControlTable_Group2": "20"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 6,
+				"startTime": "2021-06-10T16:30:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

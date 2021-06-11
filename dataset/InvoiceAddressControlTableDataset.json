@@ -1,0 +1,24 @@
+{
+	"name": "InvoiceAddressControlTableDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Secondary1LinkedService_Test",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "watermark_value",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "invoiceaddresswatermark_table"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

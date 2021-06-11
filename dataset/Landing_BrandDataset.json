@@ -1,0 +1,17 @@
+{
+	"name": "Landing_BrandDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Secondary1_Landing Linked Service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "rd",
+			"table": "Brand"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

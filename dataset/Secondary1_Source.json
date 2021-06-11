@@ -1,0 +1,16 @@
+{
+	"name": "Secondary1_Source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Odbc1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "OdbcTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "SQLUser.Invoice"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

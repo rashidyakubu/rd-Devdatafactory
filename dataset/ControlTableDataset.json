@@ -1,0 +1,66 @@
+{
+	"name": "ControlTableDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Secondary1LinkedService_Test",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Group",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Step",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Data Source",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Entity",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Load Active",
+				"type": "bit"
+			},
+			{
+				"name": "Load Type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DeltaOffset (Days)",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ETL Last Run Start",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL Last Run End",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Last Run Volume",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "ca",
+			"table": "Control_Table"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

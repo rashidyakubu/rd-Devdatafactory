@@ -1,0 +1,108 @@
+{
+	"name": "invoiceaddressdataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BlobStorageLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "invoiceaddress"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ID",
+				"type": "String"
+			},
+			{
+				"name": "TripNo",
+				"type": "String"
+			},
+			{
+				"name": "ParentDateStamp",
+				"type": "String"
+			},
+			{
+				"name": "ParentLineTimeStamp",
+				"type": "String"
+			},
+			{
+				"name": "sysCreated",
+				"type": "String"
+			},
+			{
+				"name": "sysModified",
+				"type": "String"
+			},
+			{
+				"name": "Amount",
+				"type": "String"
+			},
+			{
+				"name": "Code",
+				"type": "String"
+			},
+			{
+				"name": "DateStamp",
+				"type": "String"
+			},
+			{
+				"name": "Description",
+				"type": "String"
+			},
+			{
+				"name": "InPackage",
+				"type": "String"
+			},
+			{
+				"name": "InvoiceCode",
+				"type": "String"
+			},
+			{
+				"name": "LineNo",
+				"type": "String"
+			},
+			{
+				"name": "LineTimeStamp",
+				"type": "String"
+			},
+			{
+				"name": "LineType",
+				"type": "String"
+			},
+			{
+				"name": "LocationCode",
+				"type": "String"
+			},
+			{
+				"name": "Qty",
+				"type": "String"
+			},
+			{
+				"name": "Status",
+				"type": "String"
+			},
+			{
+				"name": "Tax1",
+				"type": "String"
+			},
+			{
+				"name": "Tax2",
+				"type": "String"
+			},
+			{
+				"name": "Tax3",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

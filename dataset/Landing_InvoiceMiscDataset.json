@@ -1,0 +1,207 @@
+{
+	"name": "Landing_InvoiceMiscDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Secondary1_Landing Linked Service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TripNo",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Comment",
+				"type": "varchar"
+			},
+			{
+				"name": "SubmittedDate",
+				"type": "date"
+			},
+			{
+				"name": "SubmittedTime",
+				"type": "varchar"
+			},
+			{
+				"name": "SubmittedUser",
+				"type": "varchar"
+			},
+			{
+				"name": "CreditedDate",
+				"type": "date"
+			},
+			{
+				"name": "CreditedTime",
+				"type": "varchar"
+			},
+			{
+				"name": "CreditedUser",
+				"type": "varchar"
+			},
+			{
+				"name": "InvoicePaymentRef",
+				"type": "varchar"
+			},
+			{
+				"name": "UserVerified",
+				"type": "varchar"
+			},
+			{
+				"name": "DateVerified",
+				"type": "date"
+			},
+			{
+				"name": "TimeVerified",
+				"type": "varchar"
+			},
+			{
+				"name": "CommissionCode",
+				"type": "varchar"
+			},
+			{
+				"name": "EDIFormat",
+				"type": "varchar"
+			},
+			{
+				"name": "InvoiceModelDateStamp",
+				"type": "date"
+			},
+			{
+				"name": "InvoiceModelLineTimeStamp",
+				"type": "varchar"
+			},
+			{
+				"name": "InvoiceModelInvoiceCode",
+				"type": "varchar"
+			},
+			{
+				"name": "InvoiceModelCode",
+				"type": "varchar"
+			},
+			{
+				"name": "BranchCode",
+				"type": "varchar"
+			},
+			{
+				"name": "sysCreated",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "sysModified",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DateCreated",
+				"type": "date"
+			},
+			{
+				"name": "DateModified",
+				"type": "date"
+			},
+			{
+				"name": "DateStamp",
+				"type": "date"
+			},
+			{
+				"name": "GLCostCr",
+				"type": "varchar"
+			},
+			{
+				"name": "GLCostDb",
+				"type": "varchar"
+			},
+			{
+				"name": "GLRevenue",
+				"type": "varchar"
+			},
+			{
+				"name": "InPackage",
+				"type": "bit"
+			},
+			{
+				"name": "InvoiceCode",
+				"type": "varchar"
+			},
+			{
+				"name": "LineTimeStamp",
+				"type": "varchar"
+			},
+			{
+				"name": "MiscCode",
+				"type": "varchar"
+			},
+			{
+				"name": "MiscDesc",
+				"type": "varchar"
+			},
+			{
+				"name": "Qty",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SellingPrice",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "Tax1",
+				"type": "bit"
+			},
+			{
+				"name": "Tax2",
+				"type": "bit"
+			},
+			{
+				"name": "Tax3",
+				"type": "bit"
+			},
+			{
+				"name": "Total",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "UnitCost",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "UpdateHistory",
+				"type": "bit"
+			},
+			{
+				"name": "UserCreated",
+				"type": "varchar"
+			},
+			{
+				"name": "UserModified",
+				"type": "varchar"
+			},
+			{
+				"name": "Warranty",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "rd",
+			"table": "InvoiceMisc"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

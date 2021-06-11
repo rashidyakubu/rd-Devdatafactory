@@ -1,0 +1,145 @@
+{
+	"name": "HeaderTable_Trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Customer_CachetoODS",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"Data_Source_Table_Name": "SQLUser.Customer",
+					"Data_Source_WaterMarkColumn": "DateModified",
+					"Data_Destination_Container": "rd.Customer",
+					"Data_Destination_Directory": " ",
+					"Control_Table_Table_Name": "watermark_table",
+					"Control_Table_Column_Name": "Invoicewatermark_value",
+					"Data_Source_WaterMarkColumn_modified": "SQLUser.Customer.DateModified",
+					"DeltaOffset": -1,
+					"ControlTable_Entity": "Customer",
+					"ControlTable_Group1": 10,
+					"ControlTable_Group2": 20,
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End",
+					"Data_Source_WaterMarkColumn_created": "DateCreated"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Invoice_CachetoODS",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"Data_Source_Table_Name": "SQLUser.Invoice",
+					"Data_Source_WaterMarkColumn": "sysModified",
+					"Data_Destination_Container": "rd.Invoice",
+					"Data_Destination_Directory": " ",
+					"Control_Table_Table_Name": "watermark_table",
+					"Control_Table_Column_Name": "Invoicewatermark_value",
+					"Data_Source_WaterMarkColumn_modified": "SQLUser.Invoice.sysModified",
+					"DeltaOffset": -1,
+					"ControlTable_Entity": "Invoice",
+					"ControlTable_Group1": 10,
+					"ControlTable_Group2": 20,
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Model_CachetoODS",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"Data_Source_Table_Name": "SQLUser.Model",
+					"Data_Source_WaterMarkColumn": "DateModified",
+					"Data_Destination_Container": "rd.Model",
+					"Data_Destination_Directory": " ",
+					"Control_Table_Table_Name": "watermark_table",
+					"Control_Table_Column_Name": "Invoicewatermark_value",
+					"Data_Source_WaterMarkColumn_modified": "SQLUser.Model.DateModified",
+					"DeltaOffset": -1,
+					"ControlTable_Entity": "Model",
+					"ControlTable_Group1": 10,
+					"ControlTable_Group2": 20,
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Serial_CachetoODS",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"Data_Source_Table_Name": "SQLUser.Serial",
+					"Data_Source_WaterMarkColumn": "DateReceived",
+					"Data_Destination_Container": "rd.Serial",
+					"Data_Destination_Directory": " ",
+					"Control_Table_Table_Name": "watermark_table",
+					"Control_Table_Column_Name": "Invoicewatermark_value",
+					"Data_Source_WaterMarkColumn_modified": "SQLUser.Serial.DateReceived",
+					"DeltaOffset": -1,
+					"ControlTable_Entity": "Serial",
+					"ControlTable_Group1": 10,
+					"ControlTable_Group2": 20,
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PO_CachetoODS",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"Data_Source_Table_Name": "SQLUser.PO",
+					"Data_Source_WaterMarkColumn": "DateStarted",
+					"Data_Destination_Container": "rd.PO",
+					"Data_Destination_Directory": " ",
+					"Control_Table_Table_Name": "watermark_table",
+					"Control_Table_Column_Name": "Invoicewatermark_value",
+					"Data_Source_WaterMarkColumn_modified": "SQLUser.PO.DateStarted",
+					"DeltaOffset": -1,
+					"ControlTable_Entity": "PO",
+					"ControlTable_Group1": 10,
+					"ControlTable_Group2": 20,
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Supplier_CachetoODS",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"Data_Source_Table_Name": "SQLUser.Supplier",
+					"Data_Source_WaterMarkColumn": "DateCreated",
+					"Data_Destination_Container": "rd.Supplier",
+					"Data_Destination_Directory": " ",
+					"Control_Table_Table_Name": "watermark_table",
+					"Control_Table_Column_Name": "Invoicewatermark_value",
+					"Data_Source_WaterMarkColumn_modified": "SQLUser.Supplier.DateCreated",
+					"DeltaOffset": -1,
+					"ControlTable_Entity": "Supplier",
+					"ControlTable_Group1": 10,
+					"ControlTable_Group2": 20,
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 6,
+				"startTime": "2021-06-10T16:30:00",
+				"timeZone": "Pacific Standard Time"
+			}
+		}
+	}
+}

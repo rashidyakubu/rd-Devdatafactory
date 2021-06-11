@@ -1,0 +1,728 @@
+{
+	"name": "Landing_MiscDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Secondary1_Landing Linked Service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Financed",
+				"type": "bit"
+			},
+			{
+				"name": "Void",
+				"type": "bit"
+			},
+			{
+				"name": "Qualification",
+				"type": "varchar"
+			},
+			{
+				"name": "Priority",
+				"type": "varchar"
+			},
+			{
+				"name": "Tax3Percentage",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "SvcRepairCode1",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcRepairCode2",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcRepairCode3",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcRepairCode4",
+				"type": "varchar"
+			},
+			{
+				"name": "ContractCode",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcContract",
+				"type": "varchar"
+			},
+			{
+				"name": "UserFinished",
+				"type": "varchar"
+			},
+			{
+				"name": "UserPosted",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdateHistoryWarranty",
+				"type": "bit"
+			},
+			{
+				"name": "ShipMethod",
+				"type": "varchar"
+			},
+			{
+				"name": "TimeCreated",
+				"type": "varchar"
+			},
+			{
+				"name": "TimeModified",
+				"type": "varchar"
+			},
+			{
+				"name": "TimeFinished",
+				"type": "varchar"
+			},
+			{
+				"name": "DispatchUnits",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EDIDateStamp",
+				"type": "date"
+			},
+			{
+				"name": "EDITimeStamp",
+				"type": "varchar"
+			},
+			{
+				"name": "PrintMethod",
+				"type": "varchar"
+			},
+			{
+				"name": "DispatchStartTime",
+				"type": "varchar"
+			},
+			{
+				"name": "TripChargeCode",
+				"type": "varchar"
+			},
+			{
+				"name": "TripChargeAmount",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "Locked",
+				"type": "bit"
+			},
+			{
+				"name": "MobileTechInvoiceCode",
+				"type": "varchar"
+			},
+			{
+				"name": "ServiceRequestID",
+				"type": "varchar"
+			},
+			{
+				"name": "CarrierCode",
+				"type": "varchar"
+			},
+			{
+				"name": "ShipViaCode",
+				"type": "varchar"
+			},
+			{
+				"name": "JobStatusUpdate",
+				"type": "bit"
+			},
+			{
+				"name": "DispatchEmail",
+				"type": "bit"
+			},
+			{
+				"name": "LastDateSaved",
+				"type": "date"
+			},
+			{
+				"name": "LastTimeSaved",
+				"type": "varchar"
+			},
+			{
+				"name": "Terms",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcEquipmentNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "WebOrderID",
+				"type": "varchar"
+			},
+			{
+				"name": "Department",
+				"type": "varchar"
+			},
+			{
+				"name": "CreditStatusCode",
+				"type": "varchar"
+			},
+			{
+				"name": "CreditApprovedUserCode",
+				"type": "varchar"
+			},
+			{
+				"name": "CreditApprovedDateStamp",
+				"type": "date"
+			},
+			{
+				"name": "CreditApprovedTimeStamp",
+				"type": "varchar"
+			},
+			{
+				"name": "EDIMaroline",
+				"type": "bit"
+			},
+			{
+				"name": "RequestedDate",
+				"type": "date"
+			},
+			{
+				"name": "SvcCSRInvoice",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcSoldList",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "SvcSoldSTDCost",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "SvcFollowUpDate",
+				"type": "date"
+			},
+			{
+				"name": "SvcScheduleDate",
+				"type": "date"
+			},
+			{
+				"name": "Tax2MaxAmount",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "EDIWhirlpool",
+				"type": "bit"
+			},
+			{
+				"name": "MinDepositPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "UnitModifier",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DateFinished",
+				"type": "date"
+			},
+			{
+				"name": "DatePosted",
+				"type": "date"
+			},
+			{
+				"name": "TimePosted",
+				"type": "varchar"
+			},
+			{
+				"name": "TTRTaxCalculated",
+				"type": "bit"
+			},
+			{
+				"name": "PickUpBranchCode",
+				"type": "varchar"
+			},
+			{
+				"name": "PodiumOptOut",
+				"type": "bit"
+			},
+			{
+				"name": "SignCustmizedFields",
+				"type": "varchar"
+			},
+			{
+				"name": "AVBSaleDateSent",
+				"type": "date"
+			},
+			{
+				"name": "AVBSaleTimeSent",
+				"type": "varchar"
+			},
+			{
+				"name": "sysCreated",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "sysModified",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TTRJurisdictionCode",
+				"type": "varchar"
+			},
+			{
+				"name": "BranchCode",
+				"type": "varchar"
+			},
+			{
+				"name": "COGSPosted",
+				"type": "bit"
+			},
+			{
+				"name": "CallSequence",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Code",
+				"type": "varchar"
+			},
+			{
+				"name": "CommittedPaymentTotal",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "DateCreated",
+				"type": "date"
+			},
+			{
+				"name": "DateModified",
+				"type": "date"
+			},
+			{
+				"name": "DispatchPriority",
+				"type": "varchar"
+			},
+			{
+				"name": "DispatchRequestedRouteCode",
+				"type": "varchar"
+			},
+			{
+				"name": "DispatchSpecRequest",
+				"type": "varchar"
+			},
+			{
+				"name": "DispatchTime",
+				"type": "varchar"
+			},
+			{
+				"name": "DispatchTimeAM",
+				"type": "varchar"
+			},
+			{
+				"name": "Estimate",
+				"type": "varchar"
+			},
+			{
+				"name": "Field1",
+				"type": "varchar"
+			},
+			{
+				"name": "Field2",
+				"type": "varchar"
+			},
+			{
+				"name": "Field3",
+				"type": "varchar"
+			},
+			{
+				"name": "Field4",
+				"type": "varchar"
+			},
+			{
+				"name": "Field5",
+				"type": "varchar"
+			},
+			{
+				"name": "InvFinishDate",
+				"type": "date"
+			},
+			{
+				"name": "InvStartDate",
+				"type": "date"
+			},
+			{
+				"name": "InvTypeCode",
+				"type": "varchar"
+			},
+			{
+				"name": "ItemListPriceCode",
+				"type": "varchar"
+			},
+			{
+				"name": "ItemTotal",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "JobLocation",
+				"type": "varchar"
+			},
+			{
+				"name": "JobNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "JobStatusCode",
+				"type": "varchar"
+			},
+			{
+				"name": "LaborRate",
+				"type": "varchar"
+			},
+			{
+				"name": "LaborTotal",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "MapReference",
+				"type": "varchar"
+			},
+			{
+				"name": "MapZoneCode",
+				"type": "varchar"
+			},
+			{
+				"name": "MiscTotal",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "OpenPaymentTotal",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "OtherListPriceCode",
+				"type": "varchar"
+			},
+			{
+				"name": "PONumber",
+				"type": "varchar"
+			},
+			{
+				"name": "PaymentTypeCode",
+				"type": "varchar"
+			},
+			{
+				"name": "PickUpDate",
+				"type": "date"
+			},
+			{
+				"name": "Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "SaleReferralCode",
+				"type": "varchar"
+			},
+			{
+				"name": "Salesperson1Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Salesperson2Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Salesperson2Percentage",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "ScheduleDate",
+				"type": "date"
+			},
+			{
+				"name": "SerialListPriceCode",
+				"type": "varchar"
+			},
+			{
+				"name": "SerialTotal",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "Status",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcAgreementExpDate",
+				"type": "date"
+			},
+			{
+				"name": "SvcAgreementNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcBrandCode",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcCenter",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcCenterNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcComplaintCode",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcComplaintDesc",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcDatePurchased",
+				"type": "date"
+			},
+			{
+				"name": "SvcDealerCode",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcDealerDesc",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcDistributorNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcInWarranty",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcMfgCodeEiaNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcMicroLeak",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcMiles",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "SvcMilesRate",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "SvcMilesTotal",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "SvcModel",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcMotorNewNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcMotorOldNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcPerformedCode",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcPerformedDesc",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcProduct",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcProductCode",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcRepairCatMinorMajor",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcRepairCategory",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcRepairCode",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcRunNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcSerial",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcSpecAuthNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcStockMerchandise",
+				"type": "bit"
+			},
+			{
+				"name": "SvcTimeCompleted1",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcTimeCompleted2",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcTimeOnJob1",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcTimeOnJob2",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcTimeStarted1",
+				"type": "varchar"
+			},
+			{
+				"name": "SvcTimeStarted2",
+				"type": "varchar"
+			},
+			{
+				"name": "Tax1Exempt",
+				"type": "varchar"
+			},
+			{
+				"name": "Tax1Total",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "Tax2Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Tax2Exempt",
+				"type": "varchar"
+			},
+			{
+				"name": "Tax2Percentage",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "Tax2Total",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "Tax3Exempt",
+				"type": "varchar"
+			},
+			{
+				"name": "Tax3Total",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "UserCreated",
+				"type": "varchar"
+			},
+			{
+				"name": "UserModified",
+				"type": "varchar"
+			},
+			{
+				"name": "Warranty",
+				"type": "varchar"
+			},
+			{
+				"name": "WarrantyField1",
+				"type": "varchar"
+			},
+			{
+				"name": "WarrantyField2",
+				"type": "varchar"
+			},
+			{
+				"name": "WarrantyField3",
+				"type": "varchar"
+			},
+			{
+				"name": "WarrantyField4",
+				"type": "varchar"
+			},
+			{
+				"name": "WarrantyField5",
+				"type": "varchar"
+			},
+			{
+				"name": "WtyTotal",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			}
+		],
+		"typeProperties": {
+			"schema": "rd",
+			"table": "Misc"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

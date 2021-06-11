@@ -1,0 +1,684 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Testblobstorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "loadtest"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ID",
+				"type": "String"
+			},
+			{
+				"name": "Financed",
+				"type": "String"
+			},
+			{
+				"name": "Void",
+				"type": "String"
+			},
+			{
+				"name": "Qualification",
+				"type": "String"
+			},
+			{
+				"name": "Priority",
+				"type": "String"
+			},
+			{
+				"name": "Tax3Percentage",
+				"type": "String"
+			},
+			{
+				"name": "SvcRepairCode1",
+				"type": "String"
+			},
+			{
+				"name": "SvcRepairCode2",
+				"type": "String"
+			},
+			{
+				"name": "SvcRepairCode3",
+				"type": "String"
+			},
+			{
+				"name": "SvcRepairCode4",
+				"type": "String"
+			},
+			{
+				"name": "ContractCode",
+				"type": "String"
+			},
+			{
+				"name": "SvcContract",
+				"type": "String"
+			},
+			{
+				"name": "UserFinished",
+				"type": "String"
+			},
+			{
+				"name": "UserPosted",
+				"type": "String"
+			},
+			{
+				"name": "UpdateHistoryWarranty",
+				"type": "String"
+			},
+			{
+				"name": "ShipMethod",
+				"type": "String"
+			},
+			{
+				"name": "TimeCreated",
+				"type": "String"
+			},
+			{
+				"name": "TimeModified",
+				"type": "String"
+			},
+			{
+				"name": "TimeFinished",
+				"type": "String"
+			},
+			{
+				"name": "DispatchUnits",
+				"type": "String"
+			},
+			{
+				"name": "EDIDateStamp",
+				"type": "String"
+			},
+			{
+				"name": "EDITimeStamp",
+				"type": "String"
+			},
+			{
+				"name": "PrintMethod",
+				"type": "String"
+			},
+			{
+				"name": "DispatchStartTime",
+				"type": "String"
+			},
+			{
+				"name": "TripChargeCode",
+				"type": "String"
+			},
+			{
+				"name": "TripChargeAmount",
+				"type": "String"
+			},
+			{
+				"name": "Locked",
+				"type": "String"
+			},
+			{
+				"name": "MobileTechInvoiceCode",
+				"type": "String"
+			},
+			{
+				"name": "ServiceRequestID",
+				"type": "String"
+			},
+			{
+				"name": "CarrierCode",
+				"type": "String"
+			},
+			{
+				"name": "ShipViaCode",
+				"type": "String"
+			},
+			{
+				"name": "JobStatusUpdate",
+				"type": "String"
+			},
+			{
+				"name": "DispatchEmail",
+				"type": "String"
+			},
+			{
+				"name": "LastDateSaved",
+				"type": "String"
+			},
+			{
+				"name": "LastTimeSaved",
+				"type": "String"
+			},
+			{
+				"name": "Terms",
+				"type": "String"
+			},
+			{
+				"name": "SvcEquipmentNumber",
+				"type": "String"
+			},
+			{
+				"name": "WebOrderID",
+				"type": "String"
+			},
+			{
+				"name": "Department",
+				"type": "String"
+			},
+			{
+				"name": "CreditStatusCode",
+				"type": "String"
+			},
+			{
+				"name": "CreditApprovedUserCode",
+				"type": "String"
+			},
+			{
+				"name": "CreditApprovedDateStamp",
+				"type": "String"
+			},
+			{
+				"name": "CreditApprovedTimeStamp",
+				"type": "String"
+			},
+			{
+				"name": "EDIMaroline",
+				"type": "String"
+			},
+			{
+				"name": "RequestedDate",
+				"type": "String"
+			},
+			{
+				"name": "SvcCSRInvoice",
+				"type": "String"
+			},
+			{
+				"name": "SvcSoldList",
+				"type": "String"
+			},
+			{
+				"name": "SvcSoldSTDCost",
+				"type": "String"
+			},
+			{
+				"name": "SvcFollowUpDate",
+				"type": "String"
+			},
+			{
+				"name": "SvcScheduleDate",
+				"type": "String"
+			},
+			{
+				"name": "Tax2MaxAmount",
+				"type": "String"
+			},
+			{
+				"name": "EDIWhirlpool",
+				"type": "String"
+			},
+			{
+				"name": "MinDepositPercent",
+				"type": "String"
+			},
+			{
+				"name": "UnitModifier",
+				"type": "String"
+			},
+			{
+				"name": "DateFinished",
+				"type": "String"
+			},
+			{
+				"name": "DatePosted",
+				"type": "String"
+			},
+			{
+				"name": "TimePosted",
+				"type": "String"
+			},
+			{
+				"name": "TTRTaxCalculated",
+				"type": "String"
+			},
+			{
+				"name": "PickUpBranchCode",
+				"type": "String"
+			},
+			{
+				"name": "PodiumOptOut",
+				"type": "String"
+			},
+			{
+				"name": "SignCustmizedFields",
+				"type": "String"
+			},
+			{
+				"name": "AVBSaleDateSent",
+				"type": "String"
+			},
+			{
+				"name": "AVBSaleTimeSent",
+				"type": "String"
+			},
+			{
+				"name": "sysCreated",
+				"type": "String"
+			},
+			{
+				"name": "sysModified",
+				"type": "String"
+			},
+			{
+				"name": "TTRJurisdictionCode",
+				"type": "String"
+			},
+			{
+				"name": "BranchCode",
+				"type": "String"
+			},
+			{
+				"name": "COGSPosted",
+				"type": "String"
+			},
+			{
+				"name": "CallSequence",
+				"type": "String"
+			},
+			{
+				"name": "Code",
+				"type": "String"
+			},
+			{
+				"name": "CommittedPaymentTotal",
+				"type": "String"
+			},
+			{
+				"name": "DateCreated",
+				"type": "String"
+			},
+			{
+				"name": "DateModified",
+				"type": "String"
+			},
+			{
+				"name": "DispatchPriority",
+				"type": "String"
+			},
+			{
+				"name": "DispatchRequestedRouteCode",
+				"type": "String"
+			},
+			{
+				"name": "DispatchSpecRequest",
+				"type": "String"
+			},
+			{
+				"name": "DispatchTime",
+				"type": "String"
+			},
+			{
+				"name": "DispatchTimeAM",
+				"type": "String"
+			},
+			{
+				"name": "Estimate",
+				"type": "String"
+			},
+			{
+				"name": "Field1",
+				"type": "String"
+			},
+			{
+				"name": "Field2",
+				"type": "String"
+			},
+			{
+				"name": "Field3",
+				"type": "String"
+			},
+			{
+				"name": "Field4",
+				"type": "String"
+			},
+			{
+				"name": "Field5",
+				"type": "String"
+			},
+			{
+				"name": "InvFinishDate",
+				"type": "String"
+			},
+			{
+				"name": "InvStartDate",
+				"type": "String"
+			},
+			{
+				"name": "InvTypeCode",
+				"type": "String"
+			},
+			{
+				"name": "ItemListPriceCode",
+				"type": "String"
+			},
+			{
+				"name": "ItemTotal",
+				"type": "String"
+			},
+			{
+				"name": "JobLocation",
+				"type": "String"
+			},
+			{
+				"name": "JobNumber",
+				"type": "String"
+			},
+			{
+				"name": "JobStatusCode",
+				"type": "String"
+			},
+			{
+				"name": "LaborRate",
+				"type": "String"
+			},
+			{
+				"name": "LaborTotal",
+				"type": "String"
+			},
+			{
+				"name": "MapReference",
+				"type": "String"
+			},
+			{
+				"name": "MapZoneCode",
+				"type": "String"
+			},
+			{
+				"name": "MiscTotal",
+				"type": "String"
+			},
+			{
+				"name": "OpenPaymentTotal",
+				"type": "String"
+			},
+			{
+				"name": "OtherListPriceCode",
+				"type": "String"
+			},
+			{
+				"name": "PONumber",
+				"type": "String"
+			},
+			{
+				"name": "PaymentTypeCode",
+				"type": "String"
+			},
+			{
+				"name": "PickUpDate",
+				"type": "String"
+			},
+			{
+				"name": "Reference",
+				"type": "String"
+			},
+			{
+				"name": "SaleReferralCode",
+				"type": "String"
+			},
+			{
+				"name": "Salesperson1Code",
+				"type": "String"
+			},
+			{
+				"name": "Salesperson2Code",
+				"type": "String"
+			},
+			{
+				"name": "Salesperson2Percentage",
+				"type": "String"
+			},
+			{
+				"name": "ScheduleDate",
+				"type": "String"
+			},
+			{
+				"name": "SerialListPriceCode",
+				"type": "String"
+			},
+			{
+				"name": "SerialTotal",
+				"type": "String"
+			},
+			{
+				"name": "Status",
+				"type": "String"
+			},
+			{
+				"name": "SvcAgreementExpDate",
+				"type": "String"
+			},
+			{
+				"name": "SvcAgreementNumber",
+				"type": "String"
+			},
+			{
+				"name": "SvcBrandCode",
+				"type": "String"
+			},
+			{
+				"name": "SvcCenter",
+				"type": "String"
+			},
+			{
+				"name": "SvcCenterNumber",
+				"type": "String"
+			},
+			{
+				"name": "SvcComplaintCode",
+				"type": "String"
+			},
+			{
+				"name": "SvcComplaintDesc",
+				"type": "String"
+			},
+			{
+				"name": "SvcDatePurchased",
+				"type": "String"
+			},
+			{
+				"name": "SvcDealerCode",
+				"type": "String"
+			},
+			{
+				"name": "SvcDealerDesc",
+				"type": "String"
+			},
+			{
+				"name": "SvcDistributorNumber",
+				"type": "String"
+			},
+			{
+				"name": "SvcInWarranty",
+				"type": "String"
+			},
+			{
+				"name": "SvcMfgCodeEiaNumber",
+				"type": "String"
+			},
+			{
+				"name": "SvcMicroLeak",
+				"type": "String"
+			},
+			{
+				"name": "SvcMiles",
+				"type": "String"
+			},
+			{
+				"name": "SvcMilesRate",
+				"type": "String"
+			},
+			{
+				"name": "SvcMilesTotal",
+				"type": "String"
+			},
+			{
+				"name": "SvcModel",
+				"type": "String"
+			},
+			{
+				"name": "SvcMotorNewNumber",
+				"type": "String"
+			},
+			{
+				"name": "SvcMotorOldNumber",
+				"type": "String"
+			},
+			{
+				"name": "SvcPerformedCode",
+				"type": "String"
+			},
+			{
+				"name": "SvcPerformedDesc",
+				"type": "String"
+			},
+			{
+				"name": "SvcProduct",
+				"type": "String"
+			},
+			{
+				"name": "SvcProductCode",
+				"type": "String"
+			},
+			{
+				"name": "SvcRepairCatMinorMajor",
+				"type": "String"
+			},
+			{
+				"name": "SvcRepairCategory",
+				"type": "String"
+			},
+			{
+				"name": "SvcRepairCode",
+				"type": "String"
+			},
+			{
+				"name": "SvcRunNumber",
+				"type": "String"
+			},
+			{
+				"name": "SvcSerial",
+				"type": "String"
+			},
+			{
+				"name": "SvcSpecAuthNumber",
+				"type": "String"
+			},
+			{
+				"name": "SvcStockMerchandise",
+				"type": "String"
+			},
+			{
+				"name": "SvcTimeCompleted1",
+				"type": "String"
+			},
+			{
+				"name": "SvcTimeCompleted2",
+				"type": "String"
+			},
+			{
+				"name": "SvcTimeOnJob1",
+				"type": "String"
+			},
+			{
+				"name": "SvcTimeOnJob2",
+				"type": "String"
+			},
+			{
+				"name": "SvcTimeStarted1",
+				"type": "String"
+			},
+			{
+				"name": "SvcTimeStarted2",
+				"type": "String"
+			},
+			{
+				"name": "Tax1Exempt",
+				"type": "String"
+			},
+			{
+				"name": "Tax1Total",
+				"type": "String"
+			},
+			{
+				"name": "Tax2Code",
+				"type": "String"
+			},
+			{
+				"name": "Tax2Exempt",
+				"type": "String"
+			},
+			{
+				"name": "Tax2Percentage",
+				"type": "String"
+			},
+			{
+				"name": "Tax2Total",
+				"type": "String"
+			},
+			{
+				"name": "Tax3Exempt",
+				"type": "String"
+			},
+			{
+				"name": "Tax3Total",
+				"type": "String"
+			},
+			{
+				"name": "UserCreated",
+				"type": "String"
+			},
+			{
+				"name": "UserModified",
+				"type": "String"
+			},
+			{
+				"name": "Warranty",
+				"type": "String"
+			},
+			{
+				"name": "WarrantyField1",
+				"type": "String"
+			},
+			{
+				"name": "WarrantyField2",
+				"type": "String"
+			},
+			{
+				"name": "WarrantyField3",
+				"type": "String"
+			},
+			{
+				"name": "WarrantyField4",
+				"type": "String"
+			},
+			{
+				"name": "WarrantyField5",
+				"type": "String"
+			},
+			{
+				"name": "WtyTotal",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

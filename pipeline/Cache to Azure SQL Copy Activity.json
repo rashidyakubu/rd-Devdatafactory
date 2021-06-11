@@ -1,0 +1,1918 @@
+{
+	"name": "Cache to Azure SQL Copy Activity",
+	"properties": {
+		"activities": [
+			{
+				"name": "CopyActivity1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OdbcSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Financed",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Financed",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "Void",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Void",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "Qualification",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Qualification",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Priority",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Priority",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax3Percentage",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Tax3Percentage",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "SvcRepairCode1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcRepairCode1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcRepairCode2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcRepairCode2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcRepairCode3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcRepairCode3",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcRepairCode4",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcRepairCode4",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ContractCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ContractCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcContract",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcContract",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UserFinished",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UserFinished",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UserPosted",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UserPosted",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UpdateHistoryWarranty",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "UpdateHistoryWarranty",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "ShipMethod",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ShipMethod",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeCreated",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TimeCreated",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeModified",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TimeModified",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeFinished",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TimeFinished",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DispatchUnits",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "DispatchUnits",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "EDIDateStamp",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "EDIDateStamp",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "EDITimeStamp",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EDITimeStamp",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PrintMethod",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PrintMethod",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DispatchStartTime",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DispatchStartTime",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TripChargeCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TripChargeCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TripChargeAmount",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TripChargeAmount",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Locked",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Locked",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "MobileTechInvoiceCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MobileTechInvoiceCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ServiceRequestID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ServiceRequestID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CarrierCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CarrierCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ShipViaCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ShipViaCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "JobStatusUpdate",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "JobStatusUpdate",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "DispatchEmail",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "DispatchEmail",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "LastDateSaved",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LastDateSaved",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "LastTimeSaved",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LastTimeSaved",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Terms",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Terms",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcEquipmentNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcEquipmentNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "WebOrderID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "WebOrderID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Department",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Department",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CreditStatusCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CreditStatusCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CreditApprovedUserCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CreditApprovedUserCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CreditApprovedDateStamp",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CreditApprovedDateStamp",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "CreditApprovedTimeStamp",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CreditApprovedTimeStamp",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EDIMaroline",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "EDIMaroline",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "RequestedDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "RequestedDate",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcCSRInvoice",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcCSRInvoice",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcSoldList",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SvcSoldList",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "SvcSoldSTDCost",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SvcSoldSTDCost",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "SvcFollowUpDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "SvcFollowUpDate",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcScheduleDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "SvcScheduleDate",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax2MaxAmount",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Tax2MaxAmount",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "EDIWhirlpool",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "EDIWhirlpool",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "MinDepositPercent",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "MinDepositPercent",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "UnitModifier",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "UnitModifier",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "DateFinished",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DateFinished",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "DatePosted",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DatePosted",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "TimePosted",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TimePosted",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TTRTaxCalculated",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "TTRTaxCalculated",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "PickUpBranchCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PickUpBranchCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PodiumOptOut",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "PodiumOptOut",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "SignCustmizedFields",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SignCustmizedFields",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AVBSaleDateSent",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "AVBSaleDateSent",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "AVBSaleTimeSent",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AVBSaleTimeSent",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "sysCreated",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "sysCreated",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "sysModified",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "sysModified",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "TTRJurisdictionCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TTRJurisdictionCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BranchCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BranchCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "COGSPosted",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "COGSPosted",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "CallSequence",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "CallSequence",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Code",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Code",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CommittedPaymentTotal",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CommittedPaymentTotal",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "DateCreated",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DateCreated",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "DateModified",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DateModified",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "DispatchPriority",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DispatchPriority",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DispatchRequestedRouteCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DispatchRequestedRouteCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DispatchSpecRequest",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DispatchSpecRequest",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DispatchTime",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DispatchTime",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DispatchTimeAM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DispatchTimeAM",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Estimate",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Estimate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Field1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Field1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Field2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Field2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Field3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Field3",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Field4",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Field4",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Field5",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Field5",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "InvFinishDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "InvFinishDate",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "InvStartDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "InvStartDate",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "InvTypeCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "InvTypeCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ItemListPriceCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ItemListPriceCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ItemTotal",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ItemTotal",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "JobLocation",
+									"type": "String"
+								},
+								"sink": {
+									"name": "JobLocation",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "JobNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "JobNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "JobStatusCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "JobStatusCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "LaborRate",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LaborRate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "LaborTotal",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LaborTotal",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "MapReference",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MapReference",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MapZoneCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MapZoneCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MiscTotal",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "MiscTotal",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "OpenPaymentTotal",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "OpenPaymentTotal",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "OtherListPriceCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OtherListPriceCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PONumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PONumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PaymentTypeCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PaymentTypeCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PickUpDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PickUpDate",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Reference",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Reference",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SaleReferralCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SaleReferralCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Salesperson1Code",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Salesperson1Code",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Salesperson2Code",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Salesperson2Code",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Salesperson2Percentage",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Salesperson2Percentage",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "ScheduleDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ScheduleDate",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "SerialListPriceCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SerialListPriceCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SerialTotal",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SerialTotal",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Status",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Status",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcAgreementExpDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "SvcAgreementExpDate",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcAgreementNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcAgreementNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcBrandCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcBrandCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcCenter",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcCenter",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcCenterNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcCenterNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcComplaintCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcComplaintCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcComplaintDesc",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcComplaintDesc",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcDatePurchased",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "SvcDatePurchased",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcDealerCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcDealerCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcDealerDesc",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcDealerDesc",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcDistributorNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcDistributorNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcInWarranty",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcInWarranty",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcMfgCodeEiaNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcMfgCodeEiaNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcMicroLeak",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcMicroLeak",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcMiles",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SvcMiles",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "SvcMilesRate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SvcMilesRate",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "SvcMilesTotal",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SvcMilesTotal",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "SvcModel",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcModel",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcMotorNewNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcMotorNewNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcMotorOldNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcMotorOldNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcPerformedCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcPerformedCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcPerformedDesc",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcPerformedDesc",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcProduct",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcProduct",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcProductCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcRepairCatMinorMajor",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcRepairCatMinorMajor",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcRepairCategory",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcRepairCategory",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcRepairCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcRepairCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcRunNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcRunNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcSerial",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcSerial",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcSpecAuthNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcSpecAuthNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcStockMerchandise",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "SvcStockMerchandise",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcTimeCompleted1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcTimeCompleted1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcTimeCompleted2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcTimeCompleted2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcTimeOnJob1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcTimeOnJob1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcTimeOnJob2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcTimeOnJob2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcTimeStarted1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcTimeStarted1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SvcTimeStarted2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SvcTimeStarted2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax1Exempt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Tax1Exempt",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax1Total",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Tax1Total",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Tax2Code",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Tax2Code",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax2Exempt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Tax2Exempt",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax2Percentage",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Tax2Percentage",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Tax2Total",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Tax2Total",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Tax3Exempt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Tax3Exempt",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax3Total",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Tax3Total",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "UserCreated",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UserCreated",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UserModified",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UserModified",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Warranty",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Warranty",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "WarrantyField1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "WarrantyField1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "WarrantyField2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "WarrantyField2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "WarrantyField3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "WarrantyField3",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "WarrantyField4",
+									"type": "String"
+								},
+								"sink": {
+									"name": "WarrantyField4",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "WarrantyField5",
+									"type": "String"
+								},
+								"sink": {
+									"name": "WarrantyField5",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "WtyTotal",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "WtyTotal",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_hdo",
+						"type": "DatasetReference",
+						"parameters": {
+							"TableName": "SQLUser.Invoice"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_hdo",
+						"type": "DatasetReference",
+						"parameters": {
+							"TableName": "Invoice"
+						}
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-05-25T20:46:43Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

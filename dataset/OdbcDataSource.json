@@ -1,0 +1,17 @@
+{
+	"name": "OdbcDataSource",
+	"properties": {
+		"description": "Connection to your source data store.",
+		"linkedServiceName": {
+			"referenceName": "Odbc1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "OdbcTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "DataSourceTable"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,112 @@
+{
+	"name": "Landing_InvoiceAddressDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Secondary1_Landing Linked Service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TripNo",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ParentDateStamp",
+				"type": "date"
+			},
+			{
+				"name": "ParentLineTimeStamp",
+				"type": "varchar"
+			},
+			{
+				"name": "sysCreated",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "sysModified",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Amount",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "Code",
+				"type": "varchar"
+			},
+			{
+				"name": "DateStamp",
+				"type": "date"
+			},
+			{
+				"name": "Description",
+				"type": "varchar"
+			},
+			{
+				"name": "InPackage",
+				"type": "varchar"
+			},
+			{
+				"name": "InvoiceCode",
+				"type": "varchar"
+			},
+			{
+				"name": "LineNo",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LineTimeStamp",
+				"type": "varchar"
+			},
+			{
+				"name": "LineType",
+				"type": "varchar"
+			},
+			{
+				"name": "LocationCode",
+				"type": "varchar"
+			},
+			{
+				"name": "Qty",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Status",
+				"type": "varchar"
+			},
+			{
+				"name": "Tax1",
+				"type": "bit"
+			},
+			{
+				"name": "Tax2",
+				"type": "bit"
+			},
+			{
+				"name": "Tax3",
+				"type": "bit"
+			}
+		],
+		"typeProperties": {
+			"schema": "rd",
+			"table": "InvoiceAddress"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
