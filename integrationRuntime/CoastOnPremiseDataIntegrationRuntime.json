@@ -1,6 +1,0 @@
-{
-	"name": "CoastOnPremiseDataIntegrationRuntime",
-	"properties": {
-		"type": "SelfHosted"
-	}
-}
