@@ -1,0 +1,9 @@
+{
+	"name": "rd-DevDataFactory",
+	"location": "canadacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5a1731e5-8a44-4161-86c9-91114ec515fb",
+		"tenantId": "5bf7a707-5b44-4c05-b575-980991ee50f2"
+	}
+}
