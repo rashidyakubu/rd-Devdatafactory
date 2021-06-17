@@ -2,7 +2,7 @@
 	"name": "Fulltable_Trigger",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipelines": [
 			{
 				"pipelineReference": {
