@@ -11,10 +11,10 @@
 			},
 			"authenticationType": "Basic",
 			"userName": "_SYSTEM",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1NTcyODlhZi0yNjFhLTRhZjctYjkyZS0wNzBjNDhlZWViMTAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJlMmE5OGIzNi0zM2FmLTRhMGYtOTUyZi00OWU3MWYyZDZlNTMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
-			"referenceName": "CoastOnPremiseDataIntegrationRuntime",
+			"referenceName": "rd-DevDataFactoryLinkedIR",
 			"type": "IntegrationRuntimeReference"
 		}
 	}
