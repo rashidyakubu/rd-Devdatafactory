@@ -1,5 +1,5 @@
 {
-	"name": "InvoiceChildTable",
+	"name": "ChildTable_Trigger",
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Stopped",
