@@ -49,121 +49,34 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Acknowledged",
+									"type": "Boolean"
+								},
 								"sink": {
-									"name": "CashedOut",
+									"name": "Acknowledged",
 									"type": "Boolean",
 									"physicalType": "bit"
 								}
 							},
 							{
+								"source": {
+									"name": "DateAcknowledged",
+									"type": "DateTime"
+								},
 								"sink": {
-									"name": "CashOutUser",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "CashOutDateStamp",
+									"name": "DateAcknowledged",
 									"type": "DateTime",
 									"physicalType": "date"
 								}
 							},
 							{
-								"sink": {
-									"name": "CashOutTimeStamp",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "TerminalCode",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "PayerIdentifier",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "SPAN",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "PayerDataManagedUntilDate",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "CardBrand",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "EntryMethod",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "InvoicePaymentRef",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "PayerIdType",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
 								"source": {
-									"name": "sysCreated",
-									"type": "DateTime"
+									"name": "OrgModSelPrice",
+									"type": "Decimal"
 								},
 								"sink": {
-									"name": "sysCreated",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"source": {
-									"name": "sysModified",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "sysModified",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"sink": {
-									"name": "BankTransactionID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "Amount",
+									"name": "OrgModSelPrice",
 									"type": "Decimal",
 									"physicalType": "decimal",
 									"scale": 4,
@@ -171,15 +84,56 @@
 								}
 							},
 							{
+								"source": {
+									"name": "CheckException",
+									"type": "Boolean"
+								},
 								"sink": {
-									"name": "AuthCode",
+									"name": "CheckException",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "UserVerified",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UserVerified",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
+								"source": {
+									"name": "DateVerified",
+									"type": "DateTime"
+								},
 								"sink": {
-									"name": "AuthStatus",
+									"name": "DateVerified",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeVerified",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TimeVerified",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CommissionCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CommissionCode",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -196,8 +150,47 @@
 								}
 							},
 							{
+								"source": {
+									"name": "sysCreated",
+									"type": "DateTime"
+								},
 								"sink": {
-									"name": "CardNumber",
+									"name": "sysCreated",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "sysModified",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "sysModified",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "Commission",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Commission",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "ContractNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ContractNumber",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -236,93 +229,122 @@
 								}
 							},
 							{
-								"sink": {
-									"name": "Description",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "ExpiryDate",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
 								"source": {
-									"name": "InvoiceCode",
-									"type": "String"
+									"name": "EndDate",
+									"type": "DateTime"
 								},
 								"sink": {
-									"name": "InvoiceCode",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "LineTimeStamp",
-									"type": "String"
-								},
-								"sink": {
-									"name": "LineTimeStamp",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "PaymentTypeCode",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "PostDate",
+									"name": "EndDate",
 									"type": "DateTime",
 									"physicalType": "date"
 								}
 							},
 							{
+								"source": {
+									"name": "ExtWarrantyCode",
+									"type": "String"
+								},
 								"sink": {
-									"name": "RespBankText",
+									"name": "ExtWarrantyCode",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
+								"source": {
+									"name": "ExtWarrantyDesc",
+									"type": "String"
+								},
 								"sink": {
-									"name": "RespBatchNo",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"sink": {
-									"name": "RespDate",
+									"name": "ExtWarrantyDesc",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
+								"source": {
+									"name": "GLCostCr",
+									"type": "String"
+								},
 								"sink": {
-									"name": "RespItemNo",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"sink": {
-									"name": "RespRefNo",
+									"name": "GLCostCr",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
+								"source": {
+									"name": "GLCostDb",
+									"type": "String"
+								},
 								"sink": {
-									"name": "RespSettlementAmount",
+									"name": "GLCostDb",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "GLRevenue",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GLRevenue",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "InPackage",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "InPackage",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "InvoiceCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "InvoiceCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "LineTimeStamp",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LineTimeStamp",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Model",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Model",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SellingPrice",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SellingPrice",
 									"type": "Decimal",
 									"physicalType": "decimal",
 									"scale": 4,
@@ -330,46 +352,93 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Serial",
+									"type": "String"
+								},
 								"sink": {
-									"name": "RespTime",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "Status",
+									"name": "Serial",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "UserCreated",
-									"type": "String"
+									"name": "StartDate",
+									"type": "DateTime"
 								},
 								"sink": {
-									"name": "UserCreated",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "UserModified",
-									"type": "String"
-								},
-								"sink": {
-									"name": "UserModified",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "insert_timestamp",
+									"name": "StartDate",
 									"type": "DateTime",
-									"physicalType": "datetime"
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax1",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Tax1",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax2",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Tax2",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax3",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Tax3",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "UnitCost",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "UnitCost",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "UserCreated",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UserCreated",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UserModified",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UserModified",
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							}
 						],
