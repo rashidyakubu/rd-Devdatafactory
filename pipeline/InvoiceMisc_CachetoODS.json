@@ -54,7 +54,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT DATEADD(dd,0,[ETL Last Run Start]) as NewWatermarkValue\nFROM ca.Control_Table\nWHERE [Group]=10 AND Entity='InvoiceMisc'",
+						"sqlReaderQuery": "SELECT DATEADD(dd,0,[ETL Last Run Start]) as NewWatermarkValue\nFROM ca.Control_Table\nWHERE [Group]=10 AND Entity='Invoice'",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
