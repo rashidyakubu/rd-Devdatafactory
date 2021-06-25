@@ -365,7 +365,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT DATEADD(dd,-[DeltaOffset (Days)],[ETL Last Run End]) AS DeltaOffset\nFROM ca.Control_Table\nWHERE Entity='InvoiceModel' AND\n             [Group]=10",
+						"sqlReaderQuery": "SELECT DATEADD(dd,-[DeltaOffset (Days)],[ETL Last Run End]) AS DeltaOffset\nFROM ca.Control_Table\nWHERE Entity='Invoice' AND\n             [Group]=10",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
