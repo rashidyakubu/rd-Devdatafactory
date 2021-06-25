@@ -105,7 +105,7 @@
 		],
 		"typeProperties": {
 			"schema": "rd",
-			"table": "InvoicePayment"
+			"table": "InvoiceWarranty"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
