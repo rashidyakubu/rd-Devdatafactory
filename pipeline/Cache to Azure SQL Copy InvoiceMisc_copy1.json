@@ -49,10 +49,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "CashedOut",
-									"type": "Boolean"
-								},
 								"sink": {
 									"name": "CashedOut",
 									"type": "Boolean",
@@ -60,10 +56,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "CashOutUser",
-									"type": "String"
-								},
 								"sink": {
 									"name": "CashOutUser",
 									"type": "String",
@@ -71,10 +63,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "CashOutDateStamp",
-									"type": "DateTime"
-								},
 								"sink": {
 									"name": "CashOutDateStamp",
 									"type": "DateTime",
@@ -82,10 +70,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "CashOutTimeStamp",
-									"type": "String"
-								},
 								"sink": {
 									"name": "CashOutTimeStamp",
 									"type": "String",
@@ -93,10 +77,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "TerminalCode",
-									"type": "String"
-								},
 								"sink": {
 									"name": "TerminalCode",
 									"type": "String",
@@ -104,10 +84,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "PayerIdentifier",
-									"type": "String"
-								},
 								"sink": {
 									"name": "PayerIdentifier",
 									"type": "String",
@@ -115,10 +91,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "SPAN",
-									"type": "String"
-								},
 								"sink": {
 									"name": "SPAN",
 									"type": "String",
@@ -126,10 +98,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "PayerDataManagedUntilDate",
-									"type": "String"
-								},
 								"sink": {
 									"name": "PayerDataManagedUntilDate",
 									"type": "String",
@@ -137,10 +105,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "CardBrand",
-									"type": "String"
-								},
 								"sink": {
 									"name": "CardBrand",
 									"type": "String",
@@ -148,10 +112,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "EntryMethod",
-									"type": "String"
-								},
 								"sink": {
 									"name": "EntryMethod",
 									"type": "String",
@@ -159,10 +119,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "InvoicePaymentRef",
-									"type": "String"
-								},
 								"sink": {
 									"name": "InvoicePaymentRef",
 									"type": "String",
@@ -170,10 +126,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "PayerIdType",
-									"type": "String"
-								},
 								"sink": {
 									"name": "PayerIdType",
 									"type": "String",
@@ -203,10 +155,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "BankTransactionID",
-									"type": "String"
-								},
 								"sink": {
 									"name": "BankTransactionID",
 									"type": "String",
@@ -214,10 +162,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "Amount",
-									"type": "Decimal"
-								},
 								"sink": {
 									"name": "Amount",
 									"type": "Decimal",
@@ -227,10 +171,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "AuthCode",
-									"type": "String"
-								},
 								"sink": {
 									"name": "AuthCode",
 									"type": "String",
@@ -238,10 +178,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "AuthStatus",
-									"type": "String"
-								},
 								"sink": {
 									"name": "AuthStatus",
 									"type": "String",
@@ -260,10 +196,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "CardNumber",
-									"type": "String"
-								},
 								"sink": {
 									"name": "CardNumber",
 									"type": "String",
@@ -304,10 +236,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "Description",
-									"type": "String"
-								},
 								"sink": {
 									"name": "Description",
 									"type": "String",
@@ -315,10 +243,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "ExpiryDate",
-									"type": "String"
-								},
 								"sink": {
 									"name": "ExpiryDate",
 									"type": "String",
@@ -348,10 +272,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "PaymentTypeCode",
-									"type": "String"
-								},
 								"sink": {
 									"name": "PaymentTypeCode",
 									"type": "String",
@@ -359,10 +279,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "PostDate",
-									"type": "DateTime"
-								},
 								"sink": {
 									"name": "PostDate",
 									"type": "DateTime",
@@ -370,10 +286,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "RespBankText",
-									"type": "String"
-								},
 								"sink": {
 									"name": "RespBankText",
 									"type": "String",
@@ -381,10 +293,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "RespBatchNo",
-									"type": "Int32"
-								},
 								"sink": {
 									"name": "RespBatchNo",
 									"type": "Int32",
@@ -392,10 +300,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "RespDate",
-									"type": "String"
-								},
 								"sink": {
 									"name": "RespDate",
 									"type": "String",
@@ -403,10 +307,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "RespItemNo",
-									"type": "Int32"
-								},
 								"sink": {
 									"name": "RespItemNo",
 									"type": "Int32",
@@ -414,10 +314,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "RespRefNo",
-									"type": "String"
-								},
 								"sink": {
 									"name": "RespRefNo",
 									"type": "String",
@@ -425,10 +321,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "RespSettlementAmount",
-									"type": "Decimal"
-								},
 								"sink": {
 									"name": "RespSettlementAmount",
 									"type": "Decimal",
@@ -438,10 +330,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "RespTime",
-									"type": "String"
-								},
 								"sink": {
 									"name": "RespTime",
 									"type": "String",
@@ -449,10 +337,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "Status",
-									"type": "String"
-								},
 								"sink": {
 									"name": "Status",
 									"type": "String",
@@ -479,6 +363,13 @@
 									"name": "UserModified",
 									"type": "String",
 									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "insert_timestamp",
+									"type": "DateTime",
+									"physicalType": "datetime"
 								}
 							}
 						],
@@ -494,13 +385,13 @@
 						"referenceName": "SourceDataset_hdo",
 						"type": "DatasetReference",
 						"parameters": {
-							"TableName": "SQLUser.InvoicePayment"
+							"TableName": "SQLUser.InvoiceWarranty"
 						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "InvoicePaymentODS",
+						"referenceName": "InvoiceWarrantyODS",
 						"type": "DatasetReference"
 					}
 				]
