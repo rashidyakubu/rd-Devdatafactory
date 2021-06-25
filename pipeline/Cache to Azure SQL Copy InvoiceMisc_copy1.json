@@ -25,6 +25,463 @@
 					"validateDataConsistency": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "TripNo",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TripNo",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "CashedOut",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "CashedOut",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "CashOutUser",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CashOutUser",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CashOutDateStamp",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CashOutDateStamp",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "CashOutTimeStamp",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CashOutTimeStamp",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TerminalCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TerminalCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PayerIdentifier",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PayerIdentifier",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SPAN",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SPAN",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PayerDataManagedUntilDate",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PayerDataManagedUntilDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CardBrand",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CardBrand",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EntryMethod",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EntryMethod",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "InvoicePaymentRef",
+									"type": "String"
+								},
+								"sink": {
+									"name": "InvoicePaymentRef",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PayerIdType",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PayerIdType",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "sysCreated",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "sysCreated",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "sysModified",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "sysModified",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "BankTransactionID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BankTransactionID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Amount",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Amount",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "AuthCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AuthCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AuthStatus",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AuthStatus",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BranchCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BranchCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CardNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CardNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DateCreated",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DateCreated",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "DateModified",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DateModified",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "DateStamp",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DateStamp",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Description",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Description",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ExpiryDate",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ExpiryDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "InvoiceCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "InvoiceCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "LineTimeStamp",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LineTimeStamp",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PaymentTypeCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PaymentTypeCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PostDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PostDate",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "RespBankText",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RespBankText",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RespBatchNo",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RespBatchNo",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "RespDate",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RespDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RespItemNo",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RespItemNo",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "RespRefNo",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RespRefNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RespSettlementAmount",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "RespSettlementAmount",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "RespTime",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RespTime",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Status",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Status",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UserCreated",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UserCreated",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UserModified",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UserModified",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
@@ -37,13 +494,13 @@
 						"referenceName": "SourceDataset_hdo",
 						"type": "DatasetReference",
 						"parameters": {
-							"TableName": "SQLUser.InvoiceMisc"
+							"TableName": "SQLUser.InvoicePayment"
 						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "InvoiceMiscODS",
+						"referenceName": "InvoicePaymentODS",
 						"type": "DatasetReference"
 					}
 				]
