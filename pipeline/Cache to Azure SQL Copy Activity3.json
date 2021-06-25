@@ -37,13 +37,13 @@
 						"referenceName": "SourceDataset_hdo",
 						"type": "DatasetReference",
 						"parameters": {
-							"TableName": "SQLUser.Serial"
+							"TableName": "SQLUser.InvoicePayment"
 						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "SerialODS",
+						"referenceName": "InvoicePaymentODS",
 						"type": "DatasetReference"
 					}
 				]
