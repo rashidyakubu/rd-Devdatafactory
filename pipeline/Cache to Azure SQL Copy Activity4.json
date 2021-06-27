@@ -1,0 +1,59 @@
+{
+	"name": "Cache to Azure SQL Copy Activity4",
+	"properties": {
+		"activities": [
+			{
+				"name": "CopyActivity1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OdbcSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_hdo",
+						"type": "DatasetReference",
+						"parameters": {
+							"TableName": "SQLUser.InvoiceMisc"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_hdo",
+						"type": "DatasetReference",
+						"parameters": {
+							"TableName": "InvoiceMisc"
+						}
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-05-25T20:46:43Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
