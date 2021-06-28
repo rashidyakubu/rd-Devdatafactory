@@ -42,6 +42,19 @@
 					"ETLEndTimeColumn": "ETL Last Run End",
 					"ControlTable_Group2": "20"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "SalesPerson_Cache to ODS",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"ControlTable_Entity": "SalesPerson",
+					"ControlTable_Group1": "10",
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End",
+					"ControlTable_Group2": "20"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
