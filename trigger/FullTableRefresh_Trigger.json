@@ -81,6 +81,19 @@
 					"ETLEndTimeColumn": "ETL Last Run End",
 					"ControlTable_Group2": "20"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "ProductMinor_Cache to ODS Copy Activity",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"ControlTable_Entity": "ProductMinor",
+					"ControlTable_Group1": "10",
+					"ETLBeginTimeColumn": "ETL Last Run Start",
+					"ETLEndTimeColumn": "ETL Last Run End",
+					"ControlTable_Group2": "20"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
