@@ -43,11 +43,8 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_hdo",
-						"type": "DatasetReference",
-						"parameters": {
-							"TableName": "InvoiceMisc"
-						}
+						"referenceName": "InvoiceMiscODS",
+						"type": "DatasetReference"
 					}
 				]
 			}
