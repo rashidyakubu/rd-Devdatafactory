@@ -37,7 +37,7 @@
 						"referenceName": "SourceDataset_hdo",
 						"type": "DatasetReference",
 						"parameters": {
-							"TableName": "SQLUser.InvoiceAddress"
+							"TableName": "SQLUser.Customer"
 						}
 					}
 				],
