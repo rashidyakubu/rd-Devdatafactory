@@ -43,7 +43,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "InvoiceMiscODS",
+						"referenceName": "POODS",
 						"type": "DatasetReference"
 					}
 				]
