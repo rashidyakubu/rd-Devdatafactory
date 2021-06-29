@@ -87,7 +87,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "Load Active Trigger Begin 2",
+						"activity": "Truncate",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -623,6 +623,33 @@
 							"type": "Int32"
 						}
 					}
+				},
+				"linkedServiceName": {
+					"referenceName": "Secondary1LinkedService_Test",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Truncate",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Load Active Trigger Begin 2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[ODSMisc_Truncate]"
 				},
 				"linkedServiceName": {
 					"referenceName": "Secondary1LinkedService_Test",
