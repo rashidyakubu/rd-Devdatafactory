@@ -25,6 +25,876 @@
 					"validateDataConsistency": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "RawBarcode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RawBarcode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "OrderedForInvoiceCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OrderedForInvoiceCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "OrderedForInvoiceDateStamp",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "OrderedForInvoiceDateStamp",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "OrderedForInvoiceTimeStamp",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OrderedForInvoiceTimeStamp",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Spiff",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Spiff",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "SpiffEndDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "SpiffEndDate",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "SpiffStartDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "SpiffStartDate",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "POLineTimeStamp",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POLineTimeStamp",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PODateStamp",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PODateStamp",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "DateReserved",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DateReserved",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Notes",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Notes",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "OriginalCost",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "OriginalCost",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "FreightAmount",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "FreightAmount",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "FreightInvoiceNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FreightInvoiceNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ResizePicture",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "ResizePicture",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "PicturePath",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PicturePath",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "StandardCost",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "StandardCost",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "ReserveExclusive",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "ReserveExclusive",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "SerialTypeCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SerialTypeCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UniqueSellPrice",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "UniqueSellPrice",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount1",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount1",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount2",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount2",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount3",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount3",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount4",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount4",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount5",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount5",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount6",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount6",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount7",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount7",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount8",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount8",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount9",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount9",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount10",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount10",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "ReserveExclusiveCommentCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ReserveExclusiveCommentCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TagPrice",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TagPrice",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount1Method",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Discount1Method",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Discount2Method",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Discount2Method",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Discount3Method",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Discount3Method",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Discount4Method",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Discount4Method",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Discount5Method",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Discount5Method",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Discount6Method",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Discount6Method",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Discount7Method",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Discount7Method",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Discount8Method",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Discount8Method",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Discount9Method",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Discount9Method",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Discount10Method",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Discount10Method",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Discount1Rate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount1Rate",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount2Rate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount2Rate",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount3Rate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount3Rate",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount4Rate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount4Rate",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount5Rate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount5Rate",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount6Rate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount6Rate",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount7Rate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount7Rate",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount8Rate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount8Rate",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount9Rate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount9Rate",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Discount10Rate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Discount10Rate",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "SupplierCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SupplierCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DyeLot",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DyeLot",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Available",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Available",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "BinLocationCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BinLocationCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Code",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Code",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Cost",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Cost",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "DateReceived",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DateReceived",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Features",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Features",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FloorPlan",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FloorPlan",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FloorPlanDueDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "FloorPlanDueDate",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "InvLineDateStamp",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "InvLineDateStamp",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "InvLineTimeStamp",
+									"type": "String"
+								},
+								"sink": {
+									"name": "InvLineTimeStamp",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "InvoiceCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "InvoiceCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "LocationCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LocationCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ModelCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ModelCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "POCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RunNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RunNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Status",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Status",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SupplierInvoice",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SupplierInvoice",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TrustDocument",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TrustDocument",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TrustDocumentLine",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TrustDocumentLine",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
@@ -37,13 +907,13 @@
 						"referenceName": "SourceDataset_hdo",
 						"type": "DatasetReference",
 						"parameters": {
-							"TableName": "SQLUser.InvoiceSerial"
+							"TableName": "SQLUser.Supplier"
 						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "InvoiceSerialODS",
+						"referenceName": "SerialODS",
 						"type": "DatasetReference"
 					}
 				]
