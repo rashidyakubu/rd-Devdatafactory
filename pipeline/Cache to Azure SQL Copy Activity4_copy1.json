@@ -19,7 +19,8 @@
 						"type": "OdbcSource"
 					},
 					"sink": {
-						"type": "AzureSqlSink"
+						"type": "AzureSqlSink",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
@@ -39,859 +40,938 @@
 							},
 							{
 								"source": {
-									"name": "RawBarcode",
+									"name": "AdditionalBillTo",
 									"type": "String"
 								},
 								"sink": {
-									"name": "RawBarcode",
+									"name": "AdditionalBillTo",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "OrderedForInvoiceCode",
+									"name": "FloorPlanning",
 									"type": "String"
 								},
 								"sink": {
-									"name": "OrderedForInvoiceCode",
+									"name": "FloorPlanning",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "OrderedForInvoiceDateStamp",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "OrderedForInvoiceDateStamp",
-									"type": "DateTime",
-									"physicalType": "date"
-								}
-							},
-							{
-								"source": {
-									"name": "OrderedForInvoiceTimeStamp",
-									"type": "String"
-								},
-								"sink": {
-									"name": "OrderedForInvoiceTimeStamp",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Spiff",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Spiff",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "SpiffEndDate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "SpiffEndDate",
-									"type": "DateTime",
-									"physicalType": "date"
-								}
-							},
-							{
-								"source": {
-									"name": "SpiffStartDate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "SpiffStartDate",
-									"type": "DateTime",
-									"physicalType": "date"
-								}
-							},
-							{
-								"source": {
-									"name": "POLineTimeStamp",
-									"type": "String"
-								},
-								"sink": {
-									"name": "POLineTimeStamp",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "PODateStamp",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "PODateStamp",
-									"type": "DateTime",
-									"physicalType": "date"
-								}
-							},
-							{
-								"source": {
-									"name": "DateReserved",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "DateReserved",
-									"type": "DateTime",
-									"physicalType": "date"
-								}
-							},
-							{
-								"source": {
-									"name": "Notes",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Notes",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "OriginalCost",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "OriginalCost",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "FreightAmount",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "FreightAmount",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "FreightInvoiceNumber",
-									"type": "String"
-								},
-								"sink": {
-									"name": "FreightInvoiceNumber",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ResizePicture",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "ResizePicture",
-									"type": "Boolean",
-									"physicalType": "bit"
-								}
-							},
-							{
-								"source": {
-									"name": "PicturePath",
-									"type": "String"
-								},
-								"sink": {
-									"name": "PicturePath",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "StandardCost",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "StandardCost",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "ReserveExclusive",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "ReserveExclusive",
-									"type": "Boolean",
-									"physicalType": "bit"
-								}
-							},
-							{
-								"source": {
-									"name": "SerialTypeCode",
-									"type": "String"
-								},
-								"sink": {
-									"name": "SerialTypeCode",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "UniqueSellPrice",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "UniqueSellPrice",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount1",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount1",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount2",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount2",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount3",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount3",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount4",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount4",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount5",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount5",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount6",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount6",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount7",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount7",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount8",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount8",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount9",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount9",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount10",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount10",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "ReserveExclusiveCommentCode",
-									"type": "String"
-								},
-								"sink": {
-									"name": "ReserveExclusiveCommentCode",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "TagPrice",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "TagPrice",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount1Method",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Discount1Method",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Discount2Method",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Discount2Method",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Discount3Method",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Discount3Method",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Discount4Method",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Discount4Method",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Discount5Method",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Discount5Method",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Discount6Method",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Discount6Method",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Discount7Method",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Discount7Method",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Discount8Method",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Discount8Method",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Discount9Method",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Discount9Method",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Discount10Method",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Discount10Method",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Discount1Rate",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount1Rate",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount2Rate",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount2Rate",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount3Rate",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount3Rate",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount4Rate",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount4Rate",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount5Rate",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount5Rate",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount6Rate",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount6Rate",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount7Rate",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount7Rate",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount8Rate",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount8Rate",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount9Rate",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount9Rate",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Discount10Rate",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Discount10Rate",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "SupplierCode",
-									"type": "String"
-								},
-								"sink": {
-									"name": "SupplierCode",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "DyeLot",
-									"type": "String"
-								},
-								"sink": {
-									"name": "DyeLot",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Available",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "Available",
-									"type": "Boolean",
-									"physicalType": "bit"
-								}
-							},
-							{
-								"source": {
-									"name": "BinLocationCode",
-									"type": "String"
-								},
-								"sink": {
-									"name": "BinLocationCode",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Code",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Code",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Cost",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Cost",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "DateReceived",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "DateReceived",
-									"type": "DateTime",
-									"physicalType": "date"
-								}
-							},
-							{
-								"source": {
-									"name": "Features",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Features",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "FloorPlan",
-									"type": "String"
-								},
-								"sink": {
-									"name": "FloorPlan",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "FloorPlanDueDate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "FloorPlanDueDate",
-									"type": "DateTime",
-									"physicalType": "date"
-								}
-							},
-							{
-								"source": {
-									"name": "InvLineDateStamp",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "InvLineDateStamp",
-									"type": "DateTime",
-									"physicalType": "date"
-								}
-							},
-							{
-								"source": {
-									"name": "InvLineTimeStamp",
-									"type": "String"
-								},
-								"sink": {
-									"name": "InvLineTimeStamp",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "InvoiceCode",
-									"type": "String"
-								},
-								"sink": {
-									"name": "InvoiceCode",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "LocationCode",
-									"type": "String"
-								},
-								"sink": {
-									"name": "LocationCode",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ModelCode",
-									"type": "String"
-								},
-								"sink": {
-									"name": "ModelCode",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "POCode",
-									"type": "String"
-								},
-								"sink": {
-									"name": "POCode",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "RunNumber",
-									"type": "String"
-								},
-								"sink": {
-									"name": "RunNumber",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Status",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Status",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "SupplierInvoice",
-									"type": "String"
-								},
-								"sink": {
-									"name": "SupplierInvoice",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "TrustDocument",
-									"type": "String"
-								},
-								"sink": {
-									"name": "TrustDocument",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "TrustDocumentLine",
+									"name": "ETADays",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "TrustDocumentLine",
+									"name": "ETADays",
 									"type": "Int32",
 									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "BranchCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BranchCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Memo",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Memo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BankAccount",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BankAccount",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DefaultPONumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DefaultPONumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DefaultLocation",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DefaultLocation",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Branch",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Branch",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ImmediateReservedDays",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ImmediateReservedDays",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "CreditGLAccount",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CreditGLAccount",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CRDueDateTerms",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CRDueDateTerms",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CRDueDays",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "CRDueDays",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "EFTBankingInstitution",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EFTBankingInstitution",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EFTBranch",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EFTBranch",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EFTBankAccount",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EFTBankAccount",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EFTContactName",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EFTContactName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EFTContactPhone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EFTContactPhone",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EFTContactExtension",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EFTContactExtension",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EFTContactFax",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EFTContactFax",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EFTEmail",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EFTEmail",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EDIFormat",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EDIFormat",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DefaultPOCost",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DefaultPOCost",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AvgLeadTime",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AvgLeadTime",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Obsolete",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Obsolete",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "DefaultCostCenter",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DefaultCostCenter",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Require1099",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Require1099",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "UseDueDateForSplitPayments",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "UseDueDateForSplitPayments",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "AutoCreateAPInvoiceCosting",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "AutoCreateAPInvoiceCosting",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "EDIOutFolder",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EDIOutFolder",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DeliveryDateRequired",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "DeliveryDateRequired",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "UseRDDFrom",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UseRDDFrom",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AccountNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AccountNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Address1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Address1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Address2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Address2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BillToSupplierCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BillToSupplierCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "City",
+									"type": "String"
+								},
+								"sink": {
+									"name": "City",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Code",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Code",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contact1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Contact1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contact2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Contact2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomerServicePhone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CustomerServicePhone",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DateCreated",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DateCreated",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "DateModified",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DateModified",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Description",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Description",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DiscountDateTerms",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DiscountDateTerms",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DiscountDays",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "DiscountDays",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "DiscountGLAccount",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DiscountGLAccount",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DiscountPercentage",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DiscountPercentage",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "DueDateTerms",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DueDateTerms",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DueDays",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "DueDays",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Email",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Email",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Fax",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Fax",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Field1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Field1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Field2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Field2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Field3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Field3",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Field4",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Field4",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Field5",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Field5",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FreightGLAccount",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FreightGLAccount",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "GSTCharged",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "GSTCharged",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "InventorySupplier",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "InventorySupplier",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "LastYearPurchase",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LastYearPurchase",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Note",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Note",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "NoteToPO",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "NoteToPO",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "POCostFactor",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "POCostFactor",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "POFloorPlanDays",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "POFloorPlanDays",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "POLineType",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POLineType",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "POMinOrder",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "POMinOrder",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "PONote",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PONote",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "POPrintISE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POPrintISE",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "POShipVia",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POShipVia",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "POUpdateAP",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "POUpdateAP",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "Phone1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Phone1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Phone2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Phone2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PrevLastYearPurchase",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PrevLastYearPurchase",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "PrintAccountOnCheck",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "PrintAccountOnCheck",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "PurchaseGLAccount",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PurchaseGLAccount",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "State",
+									"type": "String"
+								},
+								"sink": {
+									"name": "State",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SupplierTypeCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SupplierTypeCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TINNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TINNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UserCreated",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UserCreated",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UserModified",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UserModified",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Website",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Website",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "YTDPurchase",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "YTDPurchase",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "ZipCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ZipCode",
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							}
 						],
@@ -913,7 +993,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SerialODS",
+						"referenceName": "SupplierODS",
 						"type": "DatasetReference"
 					}
 				]
