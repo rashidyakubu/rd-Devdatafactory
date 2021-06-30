@@ -6,7 +6,7 @@
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "Branch_Cache to ODS",
+					"referenceName": "Branch_Cache_to_ODS",
 					"type": "PipelineReference"
 				},
 				"parameters": {
