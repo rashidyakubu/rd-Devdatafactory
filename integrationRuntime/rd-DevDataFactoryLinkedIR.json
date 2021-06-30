@@ -1,0 +1,12 @@
+{
+	"name": "rd-DevDataFactoryLinkedIR",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/91ee285b-72ed-4afb-8425-8910c68b6c5b/resourcegroups/Sandbox-RG/providers/Microsoft.DataFactory/factories/RashidYakubu/integrationruntimes/CoastOnPremiseDataIntegrationRuntime",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}
