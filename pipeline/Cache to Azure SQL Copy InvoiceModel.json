@@ -39,276 +39,44 @@
 							},
 							{
 								"source": {
-									"name": "TakenStatus",
+									"name": "TakenLocationCode",
 									"type": "String"
 								},
 								"sink": {
-									"name": "TakenStatus",
+									"name": "TakenLocationCode",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "TakenDate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "TakenDate",
-									"type": "DateTime",
-									"physicalType": "date"
-								}
-							},
-							{
-								"source": {
-									"name": "AverageCost",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "AverageCost",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "StandardCost",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "StandardCost",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "LastCost",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "LastCost",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Color",
+									"name": "ReturnReasonCode",
 									"type": "String"
 								},
 								"sink": {
-									"name": "Color",
+									"name": "ReturnReasonCode",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "POCode",
+									"name": "ReturnOutcomeCode",
 									"type": "String"
 								},
 								"sink": {
-									"name": "POCode",
+									"name": "ReturnOutcomeCode",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Reference",
+									"name": "ReturnInitiatedByCode",
 									"type": "String"
 								},
 								"sink": {
-									"name": "Reference",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "PODateStamp",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "PODateStamp",
-									"type": "DateTime",
-									"physicalType": "date"
-								}
-							},
-							{
-								"source": {
-									"name": "POLineTimeStamp",
-									"type": "String"
-								},
-								"sink": {
-									"name": "POLineTimeStamp",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "SpecialOrderDate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "SpecialOrderDate",
-									"type": "DateTime",
-									"physicalType": "date"
-								}
-							},
-							{
-								"source": {
-									"name": "TripNo",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "TripNo",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "LandedCost",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "LandedCost",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "AutoBackorder",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "AutoBackorder",
-									"type": "Boolean",
-									"physicalType": "bit"
-								}
-							},
-							{
-								"source": {
-									"name": "ManufacturersWarranty",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "ManufacturersWarranty",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "ReplacementCost",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "ReplacementCost",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "UserVerified",
-									"type": "String"
-								},
-								"sink": {
-									"name": "UserVerified",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "DateVerified",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "DateVerified",
-									"type": "DateTime",
-									"physicalType": "date"
-								}
-							},
-							{
-								"source": {
-									"name": "TimeVerified",
-									"type": "String"
-								},
-								"sink": {
-									"name": "TimeVerified",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "OriginalCost",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "OriginalCost",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "ReserveExclusive",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "ReserveExclusive",
-									"type": "Boolean",
-									"physicalType": "bit"
-								}
-							},
-							{
-								"source": {
-									"name": "CommissionCode",
-									"type": "String"
-								},
-								"sink": {
-									"name": "CommissionCode",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "EDIFormat",
-									"type": "String"
-								},
-								"sink": {
-									"name": "EDIFormat",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "BranchCode",
-									"type": "String"
-								},
-								"sink": {
-									"name": "BranchCode",
+									"name": "ReturnInitiatedByCode",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -337,6 +105,17 @@
 							},
 							{
 								"source": {
+									"name": "DateCommitted",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DateCommitted",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
 									"name": "DateCreated",
 									"type": "DateTime"
 								},
@@ -359,44 +138,11 @@
 							},
 							{
 								"source": {
-									"name": "DateStamp",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "DateStamp",
-									"type": "DateTime",
-									"physicalType": "date"
-								}
-							},
-							{
-								"source": {
-									"name": "InPackage",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "InPackage",
-									"type": "Boolean",
-									"physicalType": "bit"
-								}
-							},
-							{
-								"source": {
 									"name": "InvoiceCode",
 									"type": "String"
 								},
 								"sink": {
 									"name": "InvoiceCode",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "LineTimeStamp",
-									"type": "String"
-								},
-								"sink": {
-									"name": "LineTimeStamp",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -425,83 +171,46 @@
 							},
 							{
 								"source": {
-									"name": "ModelDesc",
+									"name": "ModelDateStamp",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ModelDateStamp",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "ModelLineTimeStamp",
 									"type": "String"
 								},
 								"sink": {
-									"name": "ModelDesc",
+									"name": "ModelLineTimeStamp",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "NewUsed",
+									"name": "Returned",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Returned",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "SerialCode",
 									"type": "String"
 								},
 								"sink": {
-									"name": "NewUsed",
+									"name": "SerialCode",
 									"type": "String",
 									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "QtyOrdered",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "QtyOrdered",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "QtyReserved",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "QtyReserved",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "QtyShipped",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "QtyShipped",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "SellingPrice",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "SellingPrice",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Spiff",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Spiff",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
 								}
 							},
 							{
@@ -517,79 +226,44 @@
 							},
 							{
 								"source": {
-									"name": "Tax1",
+									"name": "Taken",
 									"type": "Boolean"
 								},
 								"sink": {
-									"name": "Tax1",
+									"name": "Taken",
 									"type": "Boolean",
 									"physicalType": "bit"
 								}
 							},
 							{
 								"source": {
-									"name": "Tax1CostList",
+									"name": "TakenDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "TakenDate",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "TakenStatus",
 									"type": "String"
 								},
 								"sink": {
-									"name": "Tax1CostList",
+									"name": "TakenStatus",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Tax1Included",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "Tax1Included",
-									"type": "Boolean",
-									"physicalType": "bit"
-								}
-							},
-							{
-								"source": {
-									"name": "Tax1Percentage",
+									"name": "UnitCost",
 									"type": "Decimal"
 								},
 								"sink": {
-									"name": "Tax1Percentage",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 4,
-									"precision": 15
-								}
-							},
-							{
-								"source": {
-									"name": "Tax2",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "Tax2",
-									"type": "Boolean",
-									"physicalType": "bit"
-								}
-							},
-							{
-								"source": {
-									"name": "Tax3",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "Tax3",
-									"type": "Boolean",
-									"physicalType": "bit"
-								}
-							},
-							{
-								"source": {
-									"name": "Total",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Total",
+									"name": "UnitCost",
 									"type": "Decimal",
 									"physicalType": "decimal",
 									"scale": 4,
@@ -631,13 +305,13 @@
 						"referenceName": "SourceDataset_hdo",
 						"type": "DatasetReference",
 						"parameters": {
-							"TableName": "SQLUser.InvoiceModel"
+							"TableName": "SQLUser.InvoiceSerial"
 						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "InvoiceModelODS",
+						"referenceName": "InvoiceSerialODS",
 						"type": "DatasetReference"
 					}
 				]
