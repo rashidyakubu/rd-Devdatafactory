@@ -60,7 +60,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT DATEADD(dd,0,[ETL Last Run Start]) as NewWatermarkValue\nFROM ca.Control_Table\nWHERE [Group]=10 AND Entity='POSerial'",
+						"sqlReaderQuery": "SELECT DATEADD(dd,0,[ETL Last Run Start]) as NewWatermarkValue\nFROM ca.Control_Table\nWHERE [Group]=10 AND Entity='PO'",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -371,7 +371,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT DATEADD(dd,-[DeltaOffset (Days)],[ETL Last Run End]) AS DeltaOffset\nFROM ca.Control_Table\nWHERE Entity='POSerial' AND\n             [Group]=10",
+						"sqlReaderQuery": "SELECT DATEADD(dd,-[DeltaOffset (Days)],[ETL Last Run End]) AS DeltaOffset\nFROM ca.Control_Table\nWHERE Entity='PO' AND\n             [Group]=10",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
