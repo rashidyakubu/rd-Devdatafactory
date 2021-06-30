@@ -140,7 +140,7 @@
 			"recurrence": {
 				"frequency": "Hour",
 				"interval": 6,
-				"startTime": "2021-06-30T13:15:00",
+				"startTime": "2021-06-30T13:48:00",
 				"timeZone": "Pacific Standard Time"
 			}
 		}
