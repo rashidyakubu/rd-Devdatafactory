@@ -1,0 +1,367 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "rd-DevDataFactory"
+		},
+		"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "Branch"
+		},
+		"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "Brand"
+		},
+		"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "Misc"
+		},
+		"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "SalesPerson"
+		},
+		"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "Location"
+		},
+		"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "Product"
+		},
+		"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "ProductMinor"
+		},
+		"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "Dim_ProductMajor"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "Dim_ProductSuper"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "ModelNote"
+		},
+		"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/FullTableRefresh_Trigger')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "Branch_Cache to ODS",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"ControlTable_Entity": "[parameters('FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Entity')]",
+							"ControlTable_Group1": "[parameters('FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Group1')]",
+							"ETLBeginTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ETLBeginTimeColumn')]",
+							"ETLEndTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ETLEndTimeColumn')]",
+							"ControlTable_Group2": "[parameters('FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Group2')]"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Brand_Cache to ODS",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"ControlTable_Entity": "[parameters('FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Entity')]",
+							"ControlTable_Group1": "[parameters('FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Group1')]",
+							"ETLBeginTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ETLBeginTimeColumn')]",
+							"ETLEndTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ETLEndTimeColumn')]",
+							"ControlTable_Group2": "[parameters('FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Group2')]"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Misc_Cache to ODS",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"ControlTable_Entity": "[parameters('FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Entity')]",
+							"ControlTable_Group1": "[parameters('FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Group1')]",
+							"ETLBeginTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ETLBeginTimeColumn')]",
+							"ETLEndTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ETLEndTimeColumn')]",
+							"ControlTable_Group2": "[parameters('FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Group2')]"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "SalesPerson_Cache to ODS",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"ControlTable_Entity": "[parameters('FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Entity')]",
+							"ControlTable_Group1": "[parameters('FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Group1')]",
+							"ETLBeginTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ETLBeginTimeColumn')]",
+							"ETLEndTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ETLEndTimeColumn')]",
+							"ControlTable_Group2": "[parameters('FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Group2')]"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Location_Cache to ODS",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"ControlTable_Entity": "[parameters('FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Entity')]",
+							"ControlTable_Group1": "[parameters('FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Group1')]",
+							"ETLBeginTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ETLBeginTimeColumn')]",
+							"ETLEndTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ETLEndTimeColumn')]",
+							"ControlTable_Group2": "[parameters('FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Group2')]"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Product_Cache to ODS",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"ControlTable_Entity": "[parameters('FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Entity')]",
+							"ControlTable_Group1": "[parameters('FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Group1')]",
+							"ETLBeginTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ETLBeginTimeColumn')]",
+							"ETLEndTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ETLEndTimeColumn')]",
+							"ControlTable_Group2": "[parameters('FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Group2')]"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "ProductMinor_Cache to ODS Copy Activity",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"ControlTable_Entity": "[parameters('FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Entity')]",
+							"ControlTable_Group1": "[parameters('FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Group1')]",
+							"ETLBeginTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn')]",
+							"ETLEndTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn')]",
+							"ControlTable_Group2": "[parameters('FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Group2')]"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Dim_ProductMajor_Cache to ODS Copy Activity",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"ControlTable_Entity": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Entity')]",
+							"ControlTable_Group1": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Group1')]",
+							"ETLBeginTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn')]",
+							"ETLEndTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn')]",
+							"ControlTable_Group2": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Group2')]"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Dim_ProductSuper_Cache to ODS Copy Activity",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"ControlTable_Entity": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Entity')]",
+							"ControlTable_Group1": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Group1')]",
+							"ETLBeginTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn')]",
+							"ETLEndTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn')]",
+							"ControlTable_Group2": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Group2')]"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "ModelNote_Cache to ODS",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"ControlTable_Entity": "[parameters('FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Entity')]",
+							"ControlTable_Group1": "[parameters('FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Group1')]",
+							"ETLBeginTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ETLBeginTimeColumn')]",
+							"ETLEndTimeColumn": "[parameters('FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ETLEndTimeColumn')]",
+							"ControlTable_Group2": "[parameters('FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Group2')]"
+						}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Hour",
+						"interval": 6,
+						"startTime": "2021-06-30T13:48:00",
+						"timeZone": "Pacific Standard Time"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

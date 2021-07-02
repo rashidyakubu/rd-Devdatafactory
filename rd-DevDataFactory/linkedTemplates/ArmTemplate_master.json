@@ -1,0 +1,576 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "rd-DevDataFactory"
+		},
+		"AzureTableStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureTableStorage1'"
+		},
+		"BlobStorageLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'BlobStorageLinkedService'"
+		},
+		"Controltablelinkedservice_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Controltablelinkedservice'"
+		},
+		"Odbc1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Odbc1'"
+		},
+		"Odbc1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Odbc1'"
+		},
+		"Secondary1LinkedService_Test_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Secondary1LinkedService_Test'"
+		},
+		"Secondary1_Landing Linked Service_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Secondary1_Landing Linked Service'"
+		},
+		"Testblobstorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Testblobstorage1'"
+		},
+		"branch_cache_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'branch_cache'"
+		},
+		"linkedService1_storage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService1_storage'"
+		},
+		"Odbc1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "_SYSTEM"
+		},
+		"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "Branch"
+		},
+		"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "Brand"
+		},
+		"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "Misc"
+		},
+		"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "SalesPerson"
+		},
+		"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "Location"
+		},
+		"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "Product"
+		},
+		"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "ProductMinor"
+		},
+		"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "Dim_ProductMajor"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "Dim_ProductSuper"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Entity": {
+			"type": "string",
+			"defaultValue": "ModelNote"
+		},
+		"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Group1": {
+			"type": "string",
+			"defaultValue": "10"
+		},
+		"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ETLBeginTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run Start"
+		},
+		"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ETLEndTimeColumn": {
+			"type": "string",
+			"defaultValue": "ETL Last Run End"
+		},
+		"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Group2": {
+			"type": "string",
+			"defaultValue": "20"
+		},
+		"rd-DevDataFactoryLinkedIR_properties_typeProperties_linkedInfo_resourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/91ee285b-72ed-4afb-8425-8910c68b6c5b/resourcegroups/Sandbox-RG/providers/Microsoft.DataFactory/factories/RashidYakubu/integrationruntimes/CoastOnPremiseDataIntegrationRuntime"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "rd-DevDataFactory_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureTableStorage1_connectionString": {
+						"value": "[parameters('AzureTableStorage1_connectionString')]"
+					},
+					"BlobStorageLinkedService_connectionString": {
+						"value": "[parameters('BlobStorageLinkedService_connectionString')]"
+					},
+					"Controltablelinkedservice_connectionString": {
+						"value": "[parameters('Controltablelinkedservice_connectionString')]"
+					},
+					"Secondary1LinkedService_Test_connectionString": {
+						"value": "[parameters('Secondary1LinkedService_Test_connectionString')]"
+					},
+					"Secondary1_Landing Linked Service_connectionString": {
+						"value": "[parameters('Secondary1_Landing Linked Service_connectionString')]"
+					},
+					"Testblobstorage1_connectionString": {
+						"value": "[parameters('Testblobstorage1_connectionString')]"
+					},
+					"branch_cache_connectionString": {
+						"value": "[parameters('branch_cache_connectionString')]"
+					},
+					"linkedService1_storage_connectionString": {
+						"value": "[parameters('linkedService1_storage_connectionString')]"
+					},
+					"rd-DevDataFactoryLinkedIR_properties_typeProperties_linkedInfo_resourceId": {
+						"value": "[parameters('rd-DevDataFactoryLinkedIR_properties_typeProperties_linkedInfo_resourceId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "rd-DevDataFactory_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'rd-DevDataFactory_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "rd-DevDataFactory_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'rd-DevDataFactory_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "rd-DevDataFactory_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"Odbc1_connectionString": {
+						"value": "[parameters('Odbc1_connectionString')]"
+					},
+					"Odbc1_password": {
+						"value": "[parameters('Odbc1_password')]"
+					},
+					"Odbc1_properties_typeProperties_userName": {
+						"value": "[parameters('Odbc1_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'rd-DevDataFactory_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "rd-DevDataFactory_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'rd-DevDataFactory_ArmTemplate_3')]"
+			]
+		},
+		{
+			"name": "rd-DevDataFactory_ArmTemplate_5",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_5.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Entity": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Entity')]"
+					},
+					"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Group1": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Group1')]"
+					},
+					"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ETLBeginTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ETLBeginTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ETLEndTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ETLEndTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Group2": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Branch_Cache to ODS_parameters_ControlTable_Group2')]"
+					},
+					"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Entity": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Entity')]"
+					},
+					"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Group1": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Group1')]"
+					},
+					"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ETLBeginTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ETLBeginTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ETLEndTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ETLEndTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Group2": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Brand_Cache to ODS_parameters_ControlTable_Group2')]"
+					},
+					"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Entity": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Entity')]"
+					},
+					"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Group1": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Group1')]"
+					},
+					"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ETLBeginTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ETLBeginTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ETLEndTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ETLEndTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Group2": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Misc_Cache to ODS_parameters_ControlTable_Group2')]"
+					},
+					"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Entity": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Entity')]"
+					},
+					"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Group1": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Group1')]"
+					},
+					"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ETLBeginTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ETLBeginTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ETLEndTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ETLEndTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Group2": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_SalesPerson_Cache to ODS_parameters_ControlTable_Group2')]"
+					},
+					"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Entity": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Entity')]"
+					},
+					"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Group1": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Group1')]"
+					},
+					"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ETLBeginTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ETLBeginTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ETLEndTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ETLEndTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Group2": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Location_Cache to ODS_parameters_ControlTable_Group2')]"
+					},
+					"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Entity": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Entity')]"
+					},
+					"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Group1": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Group1')]"
+					},
+					"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ETLBeginTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ETLBeginTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ETLEndTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ETLEndTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Group2": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Product_Cache to ODS_parameters_ControlTable_Group2')]"
+					},
+					"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Entity": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Entity')]"
+					},
+					"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Group1": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Group1')]"
+					},
+					"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Group2": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_ProductMinor_Cache to ODS Copy Activity_parameters_ControlTable_Group2')]"
+					},
+					"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Entity": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Entity')]"
+					},
+					"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Group1": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Group1')]"
+					},
+					"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Group2": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductMajor_Cache to ODS Copy Activity_parameters_ControlTable_Group2')]"
+					},
+					"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Entity": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Entity')]"
+					},
+					"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Group1": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Group1')]"
+					},
+					"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ETLBeginTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ETLEndTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Group2": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_Dim_ProductSuper_Cache to ODS Copy Activity_parameters_ControlTable_Group2')]"
+					},
+					"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Entity": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Entity')]"
+					},
+					"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Group1": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Group1')]"
+					},
+					"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ETLBeginTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ETLBeginTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ETLEndTimeColumn": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ETLEndTimeColumn')]"
+					},
+					"FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Group2": {
+						"value": "[parameters('FullTableRefresh_Trigger_properties_ModelNote_Cache to ODS_parameters_ControlTable_Group2')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'rd-DevDataFactory_ArmTemplate_4')]"
+			]
+		}
+	]
+}
